@@ -1,63 +1,129 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="About | Ravikumar Buragapu"
+			description="Ravikumar Buragapu is an engineering leader focused on AI engineering, agentic systems, platform engineering, and building reliable, secure, production-ready enterprise platforms."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>About</h1>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+			<p>
+				I'm a Director of Engineering focused on AI engineering, platform
+				engineering, and reliability at enterprise scale. My work centers on
+				turning emerging technologies—from GenAI to agentic systems—into
+				production-ready platforms that are secure, observable, resilient,
+				and built to operate at scale.
+			</p>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+			<p>
+				I believe the next phase of AI will be defined not just by what models
+				can do, but by how well we engineer the systems around them:
+				identity, evaluation, permissions, infrastructure, operational
+				controls, and human accountability.
+			</p>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+			<h2>What I work on</h2>
+			<p>
+				My focus spans AI infrastructure, agentic architectures, LLM
+				inference, retrieval-augmented generation (RAG), cloud platforms,
+				site reliability engineering (SRE), and operational intelligence.
+				I work at the intersection of architecture, engineering execution,
+				and operations—with an emphasis on making complex systems reliable,
+				secure, and measurable in production.
+			</p>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+			<h2>Engineering leadership and impact</h2>
+			<p>
+				At Oracle Health, I lead engineering across infrastructure,
+				reliability, and data intelligence platforms spanning commercial,
+				regulated, and Federal environments. The work involves modernizing
+				critical analytics infrastructure and strengthening the operational
+				foundations required for secure, highly available, data-intensive
+				services.
+			</p>
+
+			<p>
+				At Wells Fargo, I formed the Agentic and GenAI Squad and helped
+				define the architecture and strategy for agentic workflows across
+				engineering, reaching more than 10,000 developers.
+			</p>
+
+			<p>
+				At Adobe, I led platform engineering, led the Agentic AI Builders
+				Group, and built an AI-driven Service Maturity Insights platform.
+				Earlier in my career, I held engineering roles at Kohl's and
+				Charles Schwab. I began my software engineering career in India
+				in 2000.
+			</p>
+
+			<h2>Technical perspective</h2>
+			<p>
+				I’m particularly interested in the engineering principles that
+				make AI systems trustworthy and operationally sustainable:
+				explicit agent identity, least-privilege access, policy-as-code,
+				reproducible evaluation, observability, controlled autonomy,
+				and reliable failure recovery.
+			</p>
+
+			<p>
+				I also care about the broader engineering system—developer
+				experience, platform abstractions, automation, and operational
+				practices that help teams deliver software faster without
+				compromising reliability or security.
+			</p>
+
+			<h2>Education and credentials</h2>
+
+			<section class="education-credentials">
+				<h3>Education</h3>
+				<ul>
+					<li>
+						Ph.D. in Artificial Intelligence — University of the
+						Cumberlands (In Progress)
+					</li>
+					<li>
+						Executive MBA — Quantic School of Business and Technology
+					</li>
+					<li>
+						Master’s in Electronics — Andhra University
+					</li>
+				</ul>
+
+				<h3>Professional certifications</h3>
+				<ul>
+					<li>Google Cloud Professional Cloud Architect</li>
+					<li>AWS Certified Solutions Architect – Professional</li>
+					<li>Certified Cloud Security Professional (CCSP)</li>
+					<li>ITIL Master</li>
+					<li>IAPP Artificial Intelligence Governance Professional (AIGP)</li>
+				</ul>
+			</section>
+
+			<h2>Speaking and writing</h2>
+			<p>
+				I have spoken at DPE Summit, Percona Community Live, and
+				ScyllaDB Summit, as well as AI and machine learning panels
+				in Santa Clara. My writing explores developer productivity,
+				platform engineering, AI governance, and the architectural
+				and operational challenges of running AI agents in production.
+			</p>
+
+			<p>
+				<a href="/speak">Speaking and publications</a>
+				·
+				<a href="/writing">Technical writing</a>
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>

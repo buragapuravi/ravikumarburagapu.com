@@ -1,0 +1,2 @@
+{"question":"What does the sample note say about agent autonomy?","expected_sources":["engineering-notes.md#chunk-002-"]}
+{"question":"Which note discusses logging secrets and tracing answers to sources?","expected_sources":["engineering-notes.md#chunk-004-"],"required_terms":["source identifiers","secrets"]}

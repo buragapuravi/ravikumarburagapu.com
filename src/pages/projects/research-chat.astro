@@ -1,0 +1,95 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Chat with My Research | Ravikumar Buragapu"
+			description="A citation-first agentic RAG project for querying a local research corpus with evidence-linked answers."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p>OPEN-SOURCE PROJECT · AGENTIC RAG · CITATIONS</p>
+			<h1>Chat with My Research</h1>
+			<p>
+				Ask questions across a research corpus and inspect the
+				passages behind every answer. Its MCTS extension searches
+				multi-hop decomposition trees with UCT, retrieval-confidence
+				pruning, and an evidence value function.
+			</p>
+
+			<section aria-labelledby="workflow">
+				<h2 id="workflow">Follow the evidence</h2>
+				<ol>
+					<li>Plan focused queries, preserving the original question.</li>
+					<li>Retrieve relevant passages from the local SQLite FTS index.</li>
+					<li>Optionally rerank passages with Cohere.</li>
+					<li>Answer with source citations—or show an extractive preview without model credentials.</li>
+				</ol>
+			</section>
+
+			<section aria-labelledby="search">
+				<h2 id="search">Compare planning strategies</h2>
+				<p>
+					Compare MCTS, an admissible A* retrieval-cost variant,
+					and beam search against Self-Ask, least-to-most, linear,
+					and ReAct-style baselines. Inspect the bounded search
+					tree and plot labeled multi-hop source accuracy against
+					retrieval calls.
+				</p>
+				<p>
+					The A* heuristic uses a zero lower bound on remaining
+					non-negative call cost; normalized retrieval confidence
+					breaks ties. Confidence and the default value function are
+					lexical estimates, not calibrated probabilities or
+					answer-correctness guarantees.
+				</p>
+			</section>
+
+			<section aria-labelledby="demo">
+				<h2 id="demo">Try the local demo</h2>
+				<pre><code>cd chat-with-my-research
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+research-chat ingest data/demo-corpus
+streamlit run dashboard.py</code></pre>
+				<p>
+					The included notes are synthetic project fixtures, not
+					representations of my papers, talks, or personal views.
+					Add your own authorized corpus locally; the index is
+					git-ignored by default. Without an API key, the demo
+					shows extractive passages and makes no model-provider calls.
+				</p>
+				<p>
+					Run the strategy comparison from the dashboard, or use
+					<code>research-chat compare --dataset samples/evaluation.jsonl</code>.
+					The sample scores are synthetic demonstration data, not
+					published benchmark results.
+				</p>
+			</section>
+
+			<section aria-labelledby="questions">
+				<h2 id="questions">Example questions</h2>
+				<ul>
+					<li>What does the sample note say about agent autonomy?</li>
+					<li>Compare evaluation to observability.</li>
+					<li>Which sample passage discusses tracing answers to sources?</li>
+				</ul>
+				<p>
+					Source-level metrics include recall@k, precision@k,
+					reciprocal rank, citation precision, unsupported
+					citations, and optional required-term coverage.
+				</p>
+				<p><a href="/">Back to profile</a></p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

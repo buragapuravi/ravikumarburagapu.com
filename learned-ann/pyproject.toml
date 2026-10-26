@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "learned-ann"
+version = "0.1.0"
+description = "Experimental recursive learned partitioning for approximate nearest-neighbor search."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3"]
+
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.36,<2", "pandas>=2.2,<3"]
+hnsw = ["hnswlib>=0.8,<1"]
+faiss = ["faiss-cpu>=1.8,<2"]
+scann = ["scann>=1.3,<2"]
+dev = ["pytest>=8,<9"]
+
+[project.scripts]
+learned-ann = "learned_ann.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["learned_ann*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

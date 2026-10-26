@@ -1,0 +1,63 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Tokenizer Ablation | Ravikumar Buragapu"
+			description="A from-scratch byte-level BPE tokenizer and controlled downstream code-identifier ablation at fixed token and byte budgets."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p>RESEARCH PROTOTYPE · TOKENIZATION · CONTROLLED ABLATION</p>
+			<h1>Tokenizer Ablation</h1>
+			<p>
+				How much does tokenizer choice change what a small model
+				learns? This experiment trains a byte-level BPE tokenizer
+				from scratch, sweeps its vocabulary size, and measures
+				code-identifier classification accuracy with the same
+				fixed-width classifier at fixed token and byte budgets.
+			</p>
+
+			<section aria-labelledby="experiment">
+				<h2 id="experiment">Measure the tokenizer, not a moving target</h2>
+				<ul>
+					<li>Pure-Python byte-level BPE training with byte fallback.</li>
+					<li>Vocabulary sweep: 1k, 4k, 16k, and 32k.</li>
+					<li>Eight-class code-identifier classification task.</li>
+					<li>Compare accuracy and classifier fit time at fixed token and UTF-8 byte budgets.</li>
+					<li>Optional tiktoken cl100k_base and Hugging Face BERT WordPiece references.</li>
+				</ul>
+				<p>
+					The corpus and task are generated and intentionally
+					limited. The results are not claims about pretrained
+					LLMs, arithmetic, or language-model quality.
+				</p>
+			</section>
+
+			<section aria-labelledby="demo">
+				<h2 id="demo">Run the experiment</h2>
+				<pre><code>cd tokenizer-ablation
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+tokenizer-ablation --output results/ablation.json
+pytest</code></pre>
+				<p>
+					<a href="https://github.com/buragapuravi/my_research_work/tree/main/tokenizer-ablation"
+						>Read the project README</a
+					>
+					·
+					<a href="/projects/learned-ann">Explore Learned ANN Index</a>
+				</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

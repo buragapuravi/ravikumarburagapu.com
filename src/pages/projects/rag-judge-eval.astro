@@ -1,0 +1,64 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Validated RAG Eval Harness | Ravikumar Buragapu"
+			description="A human-validated harness for measuring LLM-as-judge agreement on RAG answers and citation support."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p>RAG RESEARCH · EVALUATION · HUMAN VALIDATION</p>
+			<h1>Validated RAG Eval Harness</h1>
+			<p>
+				Does LLM-as-judge agree with human reviewers on RAG answer
+				correctness and citation support? Compare naive, rubric-based,
+				and stepwise judge prompts against independent human labels.
+			</p>
+
+			<section aria-labelledby="measures">
+				<h2 id="measures">Measure agreement—not just model scores</h2>
+				<ul>
+					<li>Three-class answer labels: correct, partially correct, or wrong.</li>
+					<li>Separate binary judgments for whether cited passages support the answer.</li>
+					<li>Nominal Cohen's κ, raw agreement, confusion counts, and per-type disagreements.</li>
+					<li>Judge cost from provider token usage and optional human labor cost.</li>
+				</ul>
+				<p>
+					Human labels are blank until reviewers complete them.
+					The included 50-case fixture is illustrative and cannot
+					establish agreement or represent multi-hop, numeric, or
+					negation question performance.
+				</p>
+			</section>
+
+			<section aria-labelledby="run">
+				<h2 id="run">Prepare independent human labels first</h2>
+				<pre><code>cd rag-judge-eval
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+pytest
+rag-judge-eval prepare
+# Complete results/human-review.csv before seeing judge outputs.
+export OPENAI_API_KEY="..."
+rag-judge-eval run --model gpt-4o-mini</code></pre>
+				<p>
+					<a href="https://github.com/buragapuravi/my_research_work/tree/main/rag-judge-eval"
+						>Read the project README</a
+					>
+					·
+					<a href="/projects/chunking-ablation">Explore Chunking Strategy Ablation</a>
+				</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

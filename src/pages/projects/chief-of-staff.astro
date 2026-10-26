@@ -1,0 +1,78 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Personal Chief of Staff | Ravikumar Buragapu"
+			description="A local-first, multi-agent personal assistant using LangGraph and read-only MCP servers for calendar, email, tasks, and meeting preparation."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p>OPEN-SOURCE PROJECT · LANGGRAPH · MCP</p>
+			<h1>Personal Chief of Staff</h1>
+			<p>
+				A local-first assistant for daily briefings, email triage,
+				meeting preparation, and scheduling suggestions. A LangGraph
+				supervisor routes each request to a focused specialist that
+				uses only the read-only MCP tools you configure.
+			</p>
+
+			<section aria-labelledby="architecture">
+				<h2 id="architecture">A supervisor, four specialists</h2>
+				<ul>
+					<li><strong>Scheduler:</strong> finds candidate openings without changing the calendar.</li>
+					<li><strong>Email Triager:</strong> prioritizes messages and drafts replies without sending.</li>
+					<li><strong>Meeting Prep:</strong> gathers relevant context and flags gaps before a call.</li>
+					<li><strong>Daily Briefing:</strong> summarizes calendar, inbox, and tasks into an actionable overview.</li>
+				</ul>
+				<p>
+					Connect trusted stdio MCP servers for Google Calendar,
+					Gmail, Notion or Todoist, Slack, or search. Tool access
+					fails closed: only explicitly read-only or recognizable
+					read tools are included in the agent graph.
+				</p>
+			</section>
+
+			<section aria-labelledby="demo">
+				<h2 id="demo">Try it with synthetic data</h2>
+				<pre><code>cd personal-chief-of-staff
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+chief-of-staff run "Give me my daily briefing"
+chief-of-staff web</code></pre>
+				<p>
+					Demo mode needs no API key, makes no external calls, and
+					uses clearly labeled sample data. The FastAPI interface
+					runs locally at <code>127.0.0.1:8787</code>.
+				</p>
+				<p>
+					Live mode requires your own trusted MCP servers and model
+					credentials. Retrieved information is sent to the model
+					provider you configure. This starter does not store
+					requests or results.
+				</p>
+			</section>
+
+			<section aria-labelledby="code">
+				<h2 id="code">Explore the project</h2>
+				<p>
+					Read the setup, architecture, MCP configuration, safety
+					boundaries, and example workflows in the
+					<a href="https://github.com/buragapuravi/my_research_work"
+						>project README</a
+					>.
+				</p>
+				<p><a href="/projects/benchmarkkit">Explore BenchmarkKit</a> · <a href="/">Back to profile</a></p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,70 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="BenchmarkKit | Ravikumar Buragapu"
+			description="BenchmarkKit compares LLM inference servers and RAG pipelines on latency, throughput, cost, retrieval recall, and answer support."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p>OPEN-SOURCE TOOLKIT · PYTHON · DOCKER</p>
+			<h1>BenchmarkKit</h1>
+			<p>
+				Make LLM serving and RAG trade-offs measurable. BenchmarkKit
+				runs repeatable workloads against OpenAI-compatible endpoints
+				and evaluates retrieval and generation results with transparent,
+				documented metrics.
+			</p>
+
+			<section aria-labelledby="inference">
+				<h2 id="inference">Inference, under load</h2>
+				<p>
+					Compare vLLM, TGI, SGLang, and TensorRT-LLM using
+					throughput, P50/P95/P99 latency, streaming TTFT,
+					token throughput, and estimated cost per 1,000 tokens.
+					Export run metrics to Prometheus and inspect JSON results
+					in the Streamlit dashboard.
+				</p>
+			</section>
+
+			<section aria-labelledby="rag">
+				<h2 id="rag">RAG, with evidence</h2>
+				<p>
+					Measure recall@k against labeled relevant documents,
+					end-to-end latency, and a deterministic answer-term
+					support proxy. The proxy is clearly distinguished from
+					semantic faithfulness or an LLM-judge evaluation.
+				</p>
+				<p>
+					Bring JSONL records transformed from public datasets such
+					as HotpotQA or Natural Questions, with dataset versions
+					and licenses documented for each experiment.
+				</p>
+			</section>
+
+			<section aria-labelledby="start">
+				<h2 id="start">Start a reproducible run</h2>
+				<pre><code>pip install -e ".[dashboard]"
+benchmarkkit inference \
+  --dataset samples/prompts.jsonl \
+  --endpoint http://localhost:8000/v1/chat/completions \
+  --model your-served-model --framework vllm</code></pre>
+				<p>
+					The toolkit includes Docker Compose for the results
+					dashboard and Prometheus, sample JSONL fixtures, metric
+					assumptions, and contributor guidance.
+				</p>
+				<p><a href="/">Back to profile</a></p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

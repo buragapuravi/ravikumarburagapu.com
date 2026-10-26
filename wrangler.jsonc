@@ -1,0 +1,9 @@
+{
+  "name": "ravikumarburagapu",
+  "compatibility_date": "2026-10-25",
+  "assets": { "directory": "./dist" },
+  "routes": [
+    { "pattern": "ravikumarburagapu.com", "custom_domain": true },
+    { "pattern": "www.ravikumarburagapu.com", "custom_domain": true }
+  ]
+}

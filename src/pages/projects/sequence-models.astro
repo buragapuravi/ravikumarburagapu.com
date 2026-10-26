@@ -1,0 +1,64 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="RNN vs Transformer | Ravikumar Buragapu"
+			description="A parameter-matched comparison of vanilla RNN, LSTM, GRU, and a tiny Transformer on character language modeling and long-range recall."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p>RESEARCH PROTOTYPE · SEQUENCE MODELS · CONTROLLED COMPARISON</p>
+			<h1>RNN vs LSTM vs GRU vs Tiny Transformer</h1>
+			<p>
+				At small scale, does attention beat recurrence—or mainly
+				change the compute bill? This experiment approximately
+				matches model parameter counts, compares character-level
+				language modeling, and probes recall across 100 distractor
+				steps.
+			</p>
+
+			<section aria-labelledby="comparison">
+				<h2 id="comparison">One budget, four architectures</h2>
+				<ul>
+					<li>Vanilla RNN, LSTM, and GRU against a two-layer, four-head causal Transformer.</li>
+					<li>Validation loss vs training steps and perplexity.</li>
+					<li>200-character samples and per-epoch training time.</li>
+					<li>Autoregressive inference tokens/second and latency.</li>
+					<li>Synthetic long-range recall with a 50% random baseline.</li>
+				</ul>
+				<p>
+					The bundled corpus and recall probe are intentionally
+					small. Results depend on training budget and hardware;
+					this is a reproducible experiment, not a universal
+					architecture ranking.
+				</p>
+			</section>
+
+			<section aria-labelledby="run">
+				<h2 id="run">Run the comparison</h2>
+				<pre><code>cd sequence-models
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+sequence-models
+pytest</code></pre>
+				<p>
+					<a href="https://github.com/buragapuravi/my_research_work/tree/main/sequence-models"
+						>Read the project README</a
+					>
+					·
+					<a href="/projects/tokenizer-ablation">Explore Tokenizer Ablation</a>
+				</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

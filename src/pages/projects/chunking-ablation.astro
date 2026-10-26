@@ -1,0 +1,62 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Chunking Strategy Ablation | Ravikumar Buragapu"
+			description="A controlled comparison of fixed, recursive, sentence-window, and semantic chunking for retrieval-augmented QA."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p>RAG RESEARCH · RETRIEVAL · CONTROLLED ABLATION</p>
+			<h1>Chunking Strategy Ablation</h1>
+			<p>
+				Is fixed-size chunking really the best default? Compare
+				fixed, recursive, sentence-window, and semantic strategies
+				with one corpus, one TF-IDF embedder, 50 hand-written
+				questions, and fixed retrieval depth k=5.
+			</p>
+
+			<section aria-labelledby="measures">
+				<h2 id="measures">Measure retrieval quality against context cost</h2>
+				<ul>
+					<li>Recall@5 against explicit gold evidence sentences.</li>
+					<li>Answer exact match, optional LLM-judge score, and editable human review.</li>
+					<li>cl100k context tokens, retrieval and end-to-end latency, and configurable token cost.</li>
+					<li>Identical corpus, embedder, question set, answerer, and retrieval depth across chunkers.</li>
+				</ul>
+				<p>
+					The bundled engineering corpus is original illustrative
+					fixture text, not private papers or domain guidance.
+					Local extractive mode makes no provider calls; LLM mode
+					is optional and requires an approved endpoint.
+				</p>
+			</section>
+
+			<section aria-labelledby="run">
+				<h2 id="run">Run the benchmark</h2>
+				<pre><code>cd chunking-ablation
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+chunking-ablation
+pytest</code></pre>
+				<p>
+					<a href="https://github.com/buragapuravi/my_research_work/tree/main/chunking-ablation"
+						>Read the project README</a
+					>
+					·
+					<a href="/projects/research-chat">Explore Chat with My Research</a>
+				</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

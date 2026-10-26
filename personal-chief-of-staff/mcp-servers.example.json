@@ -1,0 +1,26 @@
+{
+  "calendar": {
+    "transport": "stdio",
+    "command": "npx",
+    "args": ["-y", "YOUR-TRUSTED-CALENDAR-MCP-SERVER"],
+    "env": {
+      "CALENDAR_ACCESS_TOKEN": "${CALENDAR_ACCESS_TOKEN}"
+    }
+  },
+  "email": {
+    "transport": "stdio",
+    "command": "npx",
+    "args": ["-y", "YOUR-TRUSTED-GMAIL-MCP-SERVER"],
+    "env": {
+      "GMAIL_ACCESS_TOKEN": "${GMAIL_ACCESS_TOKEN}"
+    }
+  },
+  "tasks": {
+    "transport": "stdio",
+    "command": "npx",
+    "args": ["-y", "YOUR-TRUSTED-NOTION-OR-TODOIST-MCP-SERVER"],
+    "env": {
+      "TASKS_ACCESS_TOKEN": "${TASKS_ACCESS_TOKEN}"
+    }
+  }
+}

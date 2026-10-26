@@ -1,0 +1,78 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Learned ANN Index | Ravikumar Buragapu"
+			description="An experimental recursive learned partitioner for approximate nearest-neighbor search, evaluated against IVF-PQ, HNSW, and ScaNN."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p>RESEARCH PROTOTYPE · LEARNED DATA STRUCTURES · VECTOR SEARCH</p>
+			<h1>Learned ANN Index</h1>
+			<p>
+				Can a learned recursive partition model guide embedding
+				search? This prototype explores centroid-based RMI routing
+				with exact or HNSW leaf search and compares quality,
+				throughput, build time, and memory with IVF-PQ and optional
+				HNSW/ScaNN baselines.
+			</p>
+			<p>
+				This is a research experiment, not a claim that learned
+				routing outperforms mature ANN systems. Its bundled dataset
+				is synthetic; evaluate representative, authorized embeddings
+				before drawing conclusions.
+			</p>
+
+			<section aria-labelledby="algorithm">
+				<h2 id="algorithm">Learned routing, measured trade-offs</h2>
+				<ul>
+					<li>Recursive k-means routing selects candidate leaf partitions.</li>
+					<li>Exact scan is the default within a partition; local HNSW is optional.</li>
+					<li>Residual product quantization provides a self-contained IVF-PQ baseline.</li>
+					<li>Optional adapters expose Faiss IVF-PQ, hnswlib, and ScaNN comparisons.</li>
+				</ul>
+				<p>
+					The benchmark reports recall@k against brute-force ground
+					truth, sequential QPS, build time, and documented memory
+					estimates. The Streamlit dashboard plots the recall/QPS
+					frontier.
+				</p>
+			</section>
+
+			<section aria-labelledby="demo">
+				<h2 id="demo">Run a reproducible synthetic benchmark</h2>
+				<pre><code>cd learned-ann
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev,dashboard]"
+learned-ann benchmark \
+  --vectors 4000 --queries 160 --dimension 32 \
+  --indexes learned-rmi ivf-pq \
+  --output results/ann-benchmark.json
+streamlit run dashboard.py</code></pre>
+				<p>
+					Native baselines are optional extras; hardware, dataset,
+					query batching, and index parameters affect comparisons.
+					The project README documents what memory and QPS do and
+					do not measure.
+				</p>
+				<p>
+					<a href="https://github.com/buragapuravi/my_research_work/tree/main/learned-ann"
+						>Read the project README</a
+					>
+					·
+					<a href="/projects/research-chat">Explore the RAG research project</a>
+				</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

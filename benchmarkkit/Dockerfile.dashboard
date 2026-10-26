@@ -1,0 +1,8 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+COPY pyproject.toml README.md ./
+COPY benchmarkkit ./benchmarkkit
+COPY dashboard.py ./
+RUN pip install --no-cache-dir ".[dashboard]"
+CMD ["streamlit", "run", "dashboard.py", "--server.address=0.0.0.0"]

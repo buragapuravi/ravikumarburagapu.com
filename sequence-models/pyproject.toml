@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sequence-models"
+version = "0.1.0"
+description = "A parameter-matched comparison of recurrent models and a tiny Transformer."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3", "torch>=2.4,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[project.scripts]
+sequence-models = "sequence_models.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sequence_models*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rag-judge-eval"
+version = "0.1.0"
+description = "Compare LLM-as-judge prompts against human RAG answer and citation labels."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[project.scripts]
+rag-judge-eval = "rag_judge_eval.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["rag_judge_eval*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

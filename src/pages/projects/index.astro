@@ -1,0 +1,89 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Projects | Ravikumar Buragapu"
+			description="Open-source projects in production AI, LLM infrastructure, MCP, and engineering."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Projects</h1>
+			<p>
+				Tools and experiments exploring how to engineer AI systems
+				that are measurable, useful, and responsible in practice.
+			</p>
+			<article>
+				<h2><a href="/projects/rag-judge-eval">Validated RAG Eval Harness</a></h2>
+				<p>
+					A human-validated comparison of three LLM-as-judge prompts
+					for answer correctness and citation support, with Cohen's
+					kappa, question-type disagreements, and labeling costs.
+				</p>
+			</article>
+			<article>
+				<h2><a href="/projects/chunking-ablation">Chunking Strategy Ablation</a></h2>
+				<p>
+					A controlled comparison of fixed, recursive,
+					sentence-window, and semantic chunking on retrieval,
+					context tokens, answer accuracy, and latency.
+				</p>
+			</article>
+			<article>
+				<h2><a href="/projects/sequence-models">Sequence Models at Small Scale</a></h2>
+				<p>
+					A parameter-matched comparison of RNN, LSTM, GRU, and a
+					tiny Transformer on character prediction and 100-step recall.
+				</p>
+			</article>
+			<article>
+				<h2><a href="/projects/tokenizer-ablation">Tokenizer Ablation</a></h2>
+				<p>
+					A byte-level BPE tokenizer trained from scratch and
+					evaluated against downstream code-identifier accuracy
+					under fixed token and byte budgets.
+				</p>
+			</article>
+			<article>
+				<h2><a href="/projects/learned-ann">Learned ANN Index</a></h2>
+				<p>
+					An experimental recursive partition model for vector
+					search, compared with IVF-PQ, HNSW, and ScaNN on recall,
+					throughput, build time, and index memory.
+				</p>
+			</article>
+			<article>
+				<h2><a href="/projects/research-chat">Chat with My Research</a></h2>
+				<p>
+					A citation-first, LangGraph RAG application that decomposes
+					multi-hop questions with MCTS, compares search strategies,
+					retrieves local source passages, and evaluates citations.
+				</p>
+			</article>
+			<article>
+				<h2><a href="/projects/chief-of-staff">Personal Chief of Staff</a></h2>
+				<p>
+					A local-first, LangGraph-supervised assistant for daily
+					briefings, email triage, meeting prep, and scheduling
+					suggestions through read-only MCP servers.
+				</p>
+			</article>
+			<article>
+				<h2><a href="/projects/benchmarkkit">BenchmarkKit</a></h2>
+				<p>
+					An open-source toolkit for measuring LLM inference and
+					RAG latency, throughput, cost, retrieval recall, and
+					answer support.
+				</p>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>

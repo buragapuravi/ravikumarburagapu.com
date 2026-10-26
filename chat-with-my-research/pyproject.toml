@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chat-with-my-research"
+version = "0.1.0"
+description = "Citation-first, agentic RAG for a personal research corpus."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "langchain-core>=0.3,<2",
+  "langchain-openai>=0.3,<2",
+  "langgraph>=0.6,<2",
+  "streamlit>=1.36,<2",
+]
+
+[project.optional-dependencies]
+rerank = ["cohere>=5.13,<6"]
+dev = ["pytest>=8,<9"]
+
+[project.scripts]
+research-chat = "research_chat.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["research_chat*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
