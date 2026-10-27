@@ -27,16 +27,20 @@ import Header from '../components/Header.astro';
 					production systems: architecture, evaluation, security,
 					operational resilience, and measurable engineering outcomes.
 				</p>
+				<p><a href="#invite">Invite me to speak</a></p>
 			</header>
 
 			<section aria-labelledby="featured-talks">
-				<h2>Selected talks and conference appearances</h2>
-				<ul>
+				<h2 id="featured-talks">Selected talks and conference appearances</h2>
+				<ul class="talks">
 					<li>
 						<strong>DPE Summit 2023</strong>
+						<p class="meta">Talk · 2023</p>
 						<p>
-							Unlocking High-Velocity Development Strategies,
-							Tactics, and Metrics.
+							Unlocking High-Velocity Development Strategies, Tactics,
+							and Metrics: internal developer platforms, tailored
+							metrics from the DORA and SPACE frameworks, and the
+							role of generative AI in developer productivity.
 						</p>
 						<a
 							href="https://dpe.org/sessions/ravikumar-buragapu/unlocking-high-velocity-development-strategies-tactics-and-metrics/"
@@ -48,6 +52,8 @@ import Header from '../components/Header.astro';
 					</li>
 					<li>
 						<strong>ScyllaDB Summit 2023</strong>
+						<p class="meta">Talk · Online · February 2023</p>
+						{/* When you have the session title, replace the line below with it. */}
 						<p>
 							Conference presentation on database and
 							distributed-systems engineering.
@@ -62,7 +68,11 @@ import Header from '../components/Header.astro';
 					</li>
 					<li>
 						<strong>Percona Community Live 2022</strong>
-						<p>Database Resiliency.</p>
+						<p class="meta">Talk · Online · June 2022</p>
+						<p>
+							Database Resiliency: database high availability,
+							architectures, and operational resiliency.
+						</p>
 						<a
 							href="https://percona.community/events/percona-community-live-2022/day-1-ravikumar-buragapu/"
 							target="_blank"
@@ -73,7 +83,8 @@ import Header from '../components/Header.astro';
 					</li>
 					<li>
 						<strong>Artificial Intelligence and Machine Learning Conference</strong>
-						<p>Santa Clara, 2019.</p>
+						<p class="meta">Panel · Santa Clara · 2019</p>
+						{/* Add the panel's title or topic here if it had one. */}
 						<a
 							href="https://www.youtube.com/watch?v=D47lUHx6VVI"
 							target="_blank"
@@ -84,9 +95,12 @@ import Header from '../components/Header.astro';
 					</li>
 					<li>
 						<strong>Global Artificial Intelligence Conference</strong>
+						<p class="meta">Talk · Seattle</p>
+						{/* Add the year here, for example: Talk · Seattle · 2019 */}
 						<p>
-							AI / ML in Data Science Engineering &amp;
-							Operational Excellence.
+							AI / ML in Data Science Engineering &amp; Operational
+							Excellence: applying AI and machine learning to
+							operations and retail engineering.
 						</p>
 						<a
 							href="https://www.globalbigdataconference.com/seattle/global-artificial-intelligence-conference-115/speaker-details/ravi-kumar-buragapu-73271.html"
@@ -98,6 +112,8 @@ import Header from '../components/Header.astro';
 					</li>
 					<li>
 						<strong>Inspired AI / World Summit AI</strong>
+						<p class="meta">Speaker</p>
+						{/* Add the year once confirmed, for example: Speaker · 2020 */}
 						<p>
 							AI industry speaker profile and related event information.
 						</p>
@@ -188,6 +204,34 @@ import Header from '../components/Header.astro';
 				</ul>
 			</section>
 
+			<section aria-labelledby="formats">
+				<h2 id="formats">Formats</h2>
+				<ul>
+					<li>Conference talks and keynotes</li>
+					<li>Technical deep-dive sessions</li>
+					<li>Panels and fireside chats</li>
+					<li>Workshops</li>
+					<li>Guest lectures for universities</li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="bio">
+				<h2 id="bio">Speaker bio</h2>
+				<p>
+					Ravikumar Buragapu is a Director of Engineering who leads AI
+					engineering and infrastructure for Oracle Health, focusing on
+					making agentic and generative AI systems secure, observable,
+					and reliable in regulated environments. Previously he formed
+					the Agentic and GenAI Squad at Wells Fargo and led platform
+					engineering and the Agentic AI Builders Group at Adobe. He has
+					spoken at DPE Summit, Percona Community Live, and ScyllaDB
+					Summit.
+				</p>
+				<p>
+					<a href="/about">Full background</a>
+				</p>
+			</section>
+
 			<section aria-labelledby="invite">
 				<h2 id="invite">Invite me to speak</h2>
 				<p>
@@ -197,9 +241,16 @@ import Header from '../components/Header.astro';
 					reliability, and the future of software engineering.
 				</p>
 				<p>
-					For speaking invitations and collaboration, please
-					<a href="/about">learn more about my background</a>
-					or get in touch by email.
+					The best way to reach me is a message on
+					<a
+						href="https://www.linkedin.com/in/ravikumar-buragapu"
+						target="_blank"
+						rel="noopener noreferrer"
+					>LinkedIn</a>
+					with the event, date, audience, and format. You can also
+					<a href="/about">learn more about my background</a>.
+					{/* When your domain email is ready, add:
+					   or email <a href="mailto:your-address@ravikumarburagapu.com">your-address@ravikumarburagapu.com</a> */}
 				</p>
 			</section>
 
@@ -215,3 +266,24 @@ import Header from '../components/Header.astro';
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.talks {
+		list-style: none;
+		padding: 0;
+	}
+	.talks li {
+		padding: 1rem 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.talks li:last-child {
+		border-bottom: none;
+	}
+	.talks p {
+		margin: 0.25rem 0;
+	}
+	.meta {
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+	}
+</style>

@@ -31,7 +31,7 @@ import Header from '../components/Header.astro';
 			</header>
 
 			<section aria-labelledby="production-ai">
-				<h2>AI systems in production</h2>
+				<h2 id="production-ai">AI systems in production</h2>
 				<p>
 					As AI systems move from generating responses to taking
 					actions, engineering discipline becomes essential.
@@ -39,12 +39,30 @@ import Header from '../components/Header.astro';
 					operational controls, and the boundaries of agent autonomy.
 				</p>
 
-				<article>
+				<article class="piece">
+					<h3>
+						<a href="/blog/earning-agentic-autonomy">
+							Earning Agentic Autonomy: An Eval Architecture for AI Agents
+						</a>
+					</h3>
+					<p class="meta">October 2026 · On this site</p>
+					<p>
+						How evaluation evidence, explicit decision criteria,
+						and runtime enforcement can help determine when an
+						AI agent is ready to act with greater autonomy.
+						Covers replayable traces, component-level attribution,
+						error-budget autonomy tiers, and execution-time checks.
+					</p>
+					<p><a href="/blog/earning-agentic-autonomy">Read article</a></p>
+				</article>
+
+				<article class="piece">
 					<h3>
 						<a href="/blog/hard-part-of-agents">
 							The Hard Part of Agents Isn't the Model
 						</a>
 					</h3>
+					<p class="meta">October 4, 2026 · On this site · Originally on LinkedIn</p>
 					<p>
 						Why the hardest challenges in agentic AI often lie
 						outside the model—in identity, authorization,
@@ -53,26 +71,10 @@ import Header from '../components/Header.astro';
 					</p>
 					<p><a href="/blog/hard-part-of-agents">Read article</a></p>
 				</article>
-
-				<article>
-					<h3>
-						<a href="/blog/earning-agentic-autonomy">
-							Earning Agentic Autonomy: An Eval Architecture for AI Agents
-						</a>
-					</h3>
-					<p>
-						How evaluation evidence, explicit decision criteria,
-						and runtime enforcement can help determine when an
-						AI agent is ready to act with greater autonomy.
-					</p>
-					<p>
-						<a href="/blog/earning-agentic-autonomy">Read article</a>
-					</p>
-				</article>
 			</section>
 
 			<section aria-labelledby="platform-engineering">
-				<h2>Platform engineering and developer productivity</h2>
+				<h2 id="platform-engineering">Platform engineering and developer productivity</h2>
 				<p>
 					Engineering productivity is more than writing code faster.
 					It depends on the platforms, workflows, feedback loops,
@@ -80,7 +82,7 @@ import Header from '../components/Header.astro';
 					high-quality software consistently.
 				</p>
 
-				<article>
+				<article class="piece">
 					<h3>
 						<a
 							href="https://www.linkedin.com/pulse/unleashing-developer-productivity-technical-deep-dive-buragapu-jjx0f/"
@@ -91,6 +93,8 @@ import Header from '../components/Header.astro';
 							Deep Dive into Internal Developer Platforms (Part 1)
 						</a>
 					</h3>
+					<p class="meta">LinkedIn</p>
+					{/* Add the publication date to the meta line above, e.g. "March 2024 · LinkedIn" */}
 					<p>
 						An exploration of internal developer platforms and
 						their role in reducing friction, enabling self-service,
@@ -98,7 +102,7 @@ import Header from '../components/Header.astro';
 					</p>
 				</article>
 
-				<article>
+				<article class="piece">
 					<h3>
 						<a
 							href="https://www.linkedin.com/pulse/unlocking-advanced-idp-capabilities-technical-part-2-buragapu-tq9gf/"
@@ -108,6 +112,8 @@ import Header from '../components/Header.astro';
 							Unlocking Advanced IDP Capabilities (Part 2)
 						</a>
 					</h3>
+					<p class="meta">LinkedIn</p>
+					{/* Confirm the exact article title above and add the publication date to the meta line. */}
 					<p>
 						Continuing the discussion of internal developer
 						platforms and the capabilities that support
@@ -115,7 +121,7 @@ import Header from '../components/Header.astro';
 					</p>
 				</article>
 
-				<article>
+				<article class="piece">
 					<h3>
 						<a
 							href="https://medium.com/@ravikumar.buragapu/developer-productivity-engineering-dpe-maximizing-developer-productivity-with-engineering-1d97b1052edd"
@@ -127,14 +133,20 @@ import Header from '../components/Header.astro';
 							Strategies &amp; Techniques
 						</a>
 					</h3>
+					<p class="meta">May 7, 2023 · Medium</p>
 					<p>
-						Engineering practices and strategies for improving
-						developer productivity, feedback cycles, and
-						the software development lifecycle. Published in 2023.
+						Engineering strategies for improving developer
+						productivity, the landscape of generative AI developer
+						tools, developer experience and productivity metrics,
+						and how to think about return on investment.
+					</p>
+					<p class="note">
+						Written in 2023. The AI tooling landscape has changed
+						since then, so treat tool-specific details as dated.
 					</p>
 				</article>
 
-				<article>
+				<article class="piece">
 					<h3>
 						<a
 							href="https://medium.com/@ravikumar.buragapu/boosting-developer-productivity-and-efficiency-by-unlocking-the-power-of-feature-flags-543ec61b018e"
@@ -145,6 +157,8 @@ import Header from '../components/Header.astro';
 							by Unlocking the Power of Feature Flags
 						</a>
 					</h3>
+					<p class="meta">Medium</p>
+					{/* Add the year to the meta line above, e.g. "2023 · Medium" */}
 					<p>
 						How feature flags can support controlled releases,
 						experimentation, and safer software delivery.
@@ -153,7 +167,7 @@ import Header from '../components/Header.astro';
 			</section>
 
 			<section aria-labelledby="early-publications">
-				<h2>Earlier technical publications</h2>
+				<h2 id="early-publications">Earlier technical publications</h2>
 				<p>
 					My earlier writing explored web application architectures
 					and database integration. These publications reflect
@@ -161,8 +175,8 @@ import Header from '../components/Header.astro';
 					platforms, data systems, and infrastructure.
 				</p>
 
-				<ul>
-					<li>
+				<article class="piece">
+					<h3>
 						<a
 							href="https://www.eetimes.com/emerging-web-technologies-xml-based-rich-clients/"
 							target="_blank"
@@ -170,9 +184,16 @@ import Header from '../components/Header.astro';
 						>
 							Emerging Web Technologies: XML Based Rich Clients
 						</a>
-						— EE Times, 2005.
-					</li>
-					<li>
+					</h3>
+					<p class="meta">April 2005 · EE Times</p>
+					<p>
+						A framework for building flexible, modular enterprise
+						web applications with dynamic decision making.
+					</p>
+				</article>
+
+				<article class="piece">
+					<h3>
 						<a
 							href="https://www.eetimes.com/java-database-interaction-mechanism-using-oracle-reference-cursors/"
 							target="_blank"
@@ -181,13 +202,17 @@ import Header from '../components/Header.astro';
 							Java Database Interaction Mechanism Using Oracle
 							Reference Cursors
 						</a>
-						— EE Times, 2005.
-					</li>
-				</ul>
+					</h3>
+					<p class="meta">April 2005 · EE Times</p>
+					<p>
+						A mechanism for building scalable, higher-performing
+						Java applications that interact with Oracle databases.
+					</p>
+				</article>
 			</section>
 
 			<section aria-labelledby="speaking">
-				<h2>Continue the conversation</h2>
+				<h2 id="speaking">Continue the conversation</h2>
 				<p>
 					I also speak about production AI, agentic architectures,
 					platform engineering, developer productivity, and
@@ -195,6 +220,8 @@ import Header from '../components/Header.astro';
 					<a href="/speak">Explore speaking topics and appearances</a>.
 				</p>
 				<p>
+					<a href="/projects">See my open-source projects</a>
+					·
 					<a href="/about">About me</a>
 				</p>
 			</section>
@@ -202,3 +229,25 @@ import Header from '../components/Header.astro';
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.piece {
+		padding: 1rem 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.piece h3 {
+		margin: 0 0 0.25em 0;
+	}
+	.piece p {
+		margin: 0.4rem 0;
+	}
+	.meta {
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+	}
+	.note {
+		font-size: 0.9em;
+		font-style: italic;
+		color: rgb(var(--gray));
+	}
+</style>

@@ -14,7 +14,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<Header />
 		<main>
 			<section aria-labelledby="hero-title">
-				<p>AI ENGINEERING · PLATFORM ENGINEERING · RELIABILITY</p>
+				<p class="kicker">AI ENGINEERING · PLATFORM ENGINEERING · RELIABILITY</p>
 
 				<h1 id="hero-title">Engineering AI for the real world.</h1>
 
@@ -34,31 +34,25 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				</p>
 
 				<p>
-					<a href="/engineering">Explore engineering</a>
-					·
 					<a href="/writing">Read my writing</a>
+					·
+					<a href="/projects">See my projects</a>
 					·
 					<a href="/speak">Speaking</a>
 				</p>
-				<p>
-					<a href="/projects/benchmarkkit">Explore BenchmarkKit, an open-source LLM and RAG benchmarking toolkit</a>
-					·
-					<a href="/projects/chief-of-staff">Explore Personal Chief of Staff, a multi-agent MCP assistant</a>
-					·
-					<a href="/projects/research-chat">Explore Chat with My Research, a citation-first RAG project</a>
-					·
-					<a href="/projects/learned-ann">Explore Learned ANN Index, a vector-search research prototype</a>
-					·
-					<a href="/projects/tokenizer-ablation">Explore Tokenizer Ablation, a from-scratch BPE and downstream study</a>
-					·
-					<a href="/projects/sequence-models">Explore RNN vs Transformer, a parameter-matched sequence study</a>
-					·
-					<a href="/projects/chunking-ablation">Explore Chunking Ablation, a controlled RAG retrieval study</a>
-					·
-					<a href="/projects/rag-judge-eval">Explore the Validated RAG Eval Harness, a human-vs-judge agreement study</a>
-					·
-					<a href="/projects/word2vec-lab">Explore Word2Vec Lab, a from-scratch embedding geometry experiment</a>
-				</p>
+			</section>
+
+			<section aria-labelledby="proof-title">
+				<h2 id="proof-title" class="visually-hidden">Experience at a glance</h2>
+				<ul class="proof">
+					<li><strong>Oracle Health</strong> commercial, regulated, and Federal platforms</li>
+					<li><strong>10,000+ developers</strong> reached by agentic engineering at Wells Fargo</li>
+					<li><strong>Adobe</strong> platform engineering and AI-driven service maturity</li>
+					<li><strong>Since 2000</strong> in software engineering</li>
+					<!-- Optional, once your employer approves the figures:
+					<li><strong>10 PB, 500M+ records</strong> on Oracle Health data platforms</li>
+					-->
+				</ul>
 			</section>
 
 			<section aria-labelledby="focus-title">
@@ -83,6 +77,53 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 					Engineering resilient, data-intensive systems through
 					observability, SRE practices, incident automation,
 					capacity engineering, and measurable service objectives.
+				</p>
+			</section>
+
+			<section aria-labelledby="projects-title">
+				<h2 id="projects-title">Featured projects</h2>
+				<p>
+					Open-source work on measuring and controlling AI systems in
+					practice.
+				</p>
+
+				<div class="cards">
+					<article class="card">
+						<p class="tag">OPEN-SOURCE TOOLKIT · PYTHON · DOCKER</p>
+						<h3><a href="/projects/benchmarkkit">BenchmarkKit</a></h3>
+						<p>
+							Repeatable benchmarks for LLM inference servers and RAG
+							pipelines: latency percentiles, throughput, cost,
+							retrieval recall, and answer support.
+						</p>
+					</article>
+
+					<article class="card">
+						<p class="tag">RAG RESEARCH · EVALUATION</p>
+						<h3><a href="/projects/rag-judge-eval">Validated RAG Eval Harness</a></h3>
+						<p>
+							Do LLM judges agree with human reviewers? A
+							human-validated comparison of judge prompts on answer
+							correctness and citation support, measured with
+							Cohen’s kappa.
+						</p>
+					</article>
+
+					<article class="card">
+						<p class="tag">MULTI-AGENT · MCP · LANGGRAPH</p>
+						<h3><a href="/projects/chief-of-staff">Personal Chief of Staff</a></h3>
+						<p>
+							A local-first, LangGraph-supervised assistant that uses
+							read-only MCP servers for briefings, email triage, and
+							meeting prep.
+						</p>
+					</article>
+				</div>
+
+				<p>
+					<a href="/projects">All projects and research notes</a>
+					— chunking, tokenizers, embeddings, sequence models, and
+					vector search.
 				</p>
 			</section>
 
@@ -136,11 +177,23 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 					</p>
 				</article>
 
+				<article>
+					<h3>
+						<a href="/blog/hard-part-of-agents">
+							The Hard Part of Agents Isn’t the Model
+						</a>
+					</h3>
+					<p>
+						Why identity, permissions, review load, observability,
+						and cost decide whether agents survive in production.
+					</p>
+				</article>
+
 				<p><a href="/writing">Explore all articles</a></p>
 			</section>
 
 			<section aria-labelledby="connect-title">
-				<h2 id="connect-title">Let's exchange ideas</h2>
+				<h2 id="connect-title">Let’s exchange ideas</h2>
 
 				<p>
 					I’m interested in conversations about production AI,
@@ -152,9 +205,61 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 					<a href="/speak">Speaking and collaboration</a>
 					·
 					<a href="/about">About me</a>
+					·
+					<a href="https://www.linkedin.com/in/ravikumar-buragapu" target="_blank" rel="noopener">LinkedIn</a>
 				</p>
 			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.kicker,
+	.tag {
+		font-size: 0.8em;
+		letter-spacing: 0.06em;
+		color: rgb(var(--gray));
+		margin-bottom: 0.5em;
+	}
+	.proof {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 0.75rem 1.5rem;
+		list-style: none;
+		padding: 1rem 0;
+		margin: 1.5rem 0;
+		border-top: 1px solid rgb(var(--gray-light));
+		border-bottom: 1px solid rgb(var(--gray-light));
+		font-size: 0.95em;
+	}
+	.proof strong {
+		display: block;
+	}
+	.cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1rem;
+		margin: 1.5rem 0;
+	}
+	.card {
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 8px;
+		padding: 1rem;
+	}
+	.card h3 {
+		margin: 0 0 0.5em 0;
+	}
+	.card p:last-child {
+		margin-bottom: 0;
+		font-size: 0.95em;
+	}
+	.visually-hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap
+	}
+</style>

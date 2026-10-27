@@ -1,0 +1,112 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	tag: string;
+	intro: string;
+	status?: string;
+	stack?: string;
+	repo?: string;
+	findings?: string[];
+	caveat?: string;
+}
+
+const { title, description, tag, intro, status, stack, repo, findings, caveat } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${title} | Ravikumar Buragapu`} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p class="tag">{tag}</p>
+			<h1>{title}</h1>
+			<p>{intro}</p>
+
+			<dl class="facts">
+				{status && (
+					<div>
+						<dt>Status</dt>
+						<dd>{status}</dd>
+					</div>
+				)}
+				{stack && (
+					<div>
+						<dt>Stack</dt>
+						<dd>{stack}</dd>
+					</div>
+				)}
+				{repo && (
+					<div>
+						<dt>Code</dt>
+						<dd>
+							<a href={repo} target="_blank" rel="noopener noreferrer">View repository</a>
+						</dd>
+					</div>
+				)}
+			</dl>
+
+			{findings && findings.length > 0 && (
+				<section aria-labelledby="found">
+					<h2 id="found">What I found</h2>
+					<ul>
+						{findings.map((finding) => <li>{finding}</li>)}
+					</ul>
+					{caveat && <p class="caveat">{caveat}</p>}
+				</section>
+			)}
+
+			<slot />
+
+			<p class="back">
+				<a href="/projects">All projects</a>
+				·
+				<a href="/writing">Writing</a>
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.tag {
+		font-size: 0.8em;
+		letter-spacing: 0.06em;
+		color: rgb(var(--gray));
+		margin-bottom: 0.5em;
+	}
+	.facts {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem 2rem;
+		margin: 1.25rem 0;
+		padding: 0.75rem 0;
+		border-top: 1px solid rgb(var(--gray-light));
+		border-bottom: 1px solid rgb(var(--gray-light));
+		font-size: 0.95em;
+	}
+	.facts dt {
+		font-size: 0.8em;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: rgb(var(--gray));
+	}
+	.facts dd {
+		margin: 0;
+	}
+	.caveat {
+		font-size: 0.9em;
+		font-style: italic;
+		color: rgb(var(--gray));
+	}
+	.back {
+		margin-top: 2rem;
+	}
+</style>

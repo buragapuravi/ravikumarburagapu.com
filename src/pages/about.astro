@@ -17,6 +17,11 @@ import Header from '../components/Header.astro';
 		<main>
 			<h1>About</h1>
 
+			{/* Headshot: add a photo to the project's public folder (for example
+			    public/ravikumar.jpg), then remove the comment markers around this line.
+			<img class="headshot" src="/ravikumar.jpg" alt="Ravikumar Buragapu" width="160" height="160" />
+			*/}
+
 			<p>
 				I'm a Director of Engineering focused on AI engineering, platform
 				engineering, and reliability at enterprise scale. My work centers on
@@ -32,7 +37,7 @@ import Header from '../components/Header.astro';
 				controls, and human accountability.
 			</p>
 
-			<h2>What I work on</h2>
+			<h2 id="work">What I work on</h2>
 			<p>
 				My focus spans AI infrastructure, agentic architectures, LLM
 				inference, retrieval-augmented generation (RAG), cloud platforms,
@@ -42,31 +47,54 @@ import Header from '../components/Header.astro';
 				secure, and measurable in production.
 			</p>
 
-			<h2>Engineering leadership and impact</h2>
-			<p>
-				At Oracle Health, I lead engineering across infrastructure,
-				reliability, and data intelligence platforms spanning commercial,
-				regulated, and Federal environments. The work involves modernizing
-				critical analytics infrastructure and strengthening the operational
-				foundations required for secure, highly available, data-intensive
-				services.
-			</p>
+			<h2 id="arc">Engineering leadership and impact</h2>
+			<ul class="arc">
+				<li>
+					<strong>Oracle Health</strong>
+					<p>
+						I lead engineering across infrastructure, reliability, and
+						data intelligence platforms spanning commercial, regulated,
+						and Federal environments, modernizing them into AI-native,
+						action-driven platforms with the operational foundations
+						required for secure, highly available, data-intensive
+						services.
+					</p>
+				</li>
+				<li>
+					<strong>Wells Fargo</strong>
+					<p>
+						I formed the Agentic and GenAI Squad, headed the AI-native
+						SDLC transformation, and helped define the architecture and
+						strategy for agentic workflows across engineering, reaching
+						more than 10,000 developers.
+					</p>
+				</li>
+				<li>
+					<strong>Adobe</strong>
+					<p>
+						I led platform engineering and the Agentic AI Builders Group,
+						and built an AI-driven Service Maturity Insights platform. My
+						work there included an AI-native developer platform with a
+						modern, action-driven CI/CD approach.
+					</p>
+				</li>
+				<li>
+					<strong>Kohl's</strong>
+					<p>
+						I worked on AI initiatives and the development of a data
+						science engineering platform.
+					</p>
+				</li>
+				<li>
+					<strong>Earlier</strong>
+					<p>
+						Engineering roles at Charles Schwab, after beginning my
+						software engineering career in India in 2000.
+					</p>
+				</li>
+			</ul>
 
-			<p>
-				At Wells Fargo, I formed the Agentic and GenAI Squad and helped
-				define the architecture and strategy for agentic workflows across
-				engineering, reaching more than 10,000 developers.
-			</p>
-
-			<p>
-				At Adobe, I led platform engineering, led the Agentic AI Builders
-				Group, and built an AI-driven Service Maturity Insights platform.
-				Earlier in my career, I held engineering roles at Kohl's and
-				Charles Schwab. I began my software engineering career in India
-				in 2000.
-			</p>
-
-			<h2>Technical perspective</h2>
+			<h2 id="perspective">Technical perspective</h2>
 			<p>
 				I’m particularly interested in the engineering principles that
 				make AI systems trustworthy and operationally sustainable:
@@ -82,7 +110,25 @@ import Header from '../components/Header.astro';
 				compromising reliability or security.
 			</p>
 
-			<h2>Education and credentials</h2>
+			<h2 id="convictions">How I think</h2>
+			<ul>
+				<li>
+					<strong>Autonomy should be earned.</strong> An agent's freedom to
+					act should rise and fall with measured evidence of reliability,
+					not with enthusiasm.
+				</li>
+				<li>
+					<strong>Evaluation is the control plane.</strong> The same system
+					that measures an agent should decide what it is allowed to do.
+				</li>
+				<li>
+					<strong>Agents are a reliability problem.</strong> Identity,
+					observability, error budgets, and rollback are old platform
+					disciplines applied to systems that can now take action.
+				</li>
+			</ul>
+
+			<h2 id="education">Education and credentials</h2>
 
 			<section class="education-credentials">
 				<h3>Education</h3>
@@ -95,7 +141,7 @@ import Header from '../components/Header.astro';
 						Executive MBA — Quantic School of Business and Technology
 					</li>
 					<li>
-						Master’s in Electronics — Andhra University
+						M.Sc. in Physics (Electronics specialization) — Andhra University
 					</li>
 				</ul>
 
@@ -109,21 +155,56 @@ import Header from '../components/Header.astro';
 				</ul>
 			</section>
 
-			<h2>Speaking and writing</h2>
+			<h2 id="more">Speaking, writing, and projects</h2>
 			<p>
 				I have spoken at DPE Summit, Percona Community Live, and
 				ScyllaDB Summit, as well as AI and machine learning panels
 				in Santa Clara. My writing explores developer productivity,
 				platform engineering, AI governance, and the architectural
 				and operational challenges of running AI agents in production.
+				My open-source projects focus on measuring and controlling AI
+				systems in practice.
 			</p>
 
 			<p>
-				<a href="/speak">Speaking and publications</a>
+				<a href="/speak">Speaking</a>
 				·
-				<a href="/writing">Technical writing</a>
+				<a href="/writing">Writing</a>
+				·
+				<a href="/projects">Projects</a>
+			</p>
+
+			<p>
+				To get in touch, message me on
+				<a
+					href="https://www.linkedin.com/in/ravikumar-buragapu"
+					target="_blank"
+					rel="noopener noreferrer"
+				>LinkedIn</a>.
 			</p>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.arc {
+		list-style: none;
+		padding: 0;
+		margin: 1rem 0;
+	}
+	.arc li {
+		padding: 0.25rem 0 0.25rem 1rem;
+		margin-bottom: 0.75rem;
+		border-left: 3px solid rgb(var(--gray-light));
+	}
+	.arc p {
+		margin: 0.25rem 0 0 0;
+	}
+	.headshot {
+		float: right;
+		margin: 0 0 1rem 1.5rem;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+</style>
