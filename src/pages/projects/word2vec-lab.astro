@@ -1,0 +1,64 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Word2Vec Lab | Ravikumar Buragapu"
+			description="A from-scratch NumPy skip-gram experiment with negative sampling, analogy evaluation, and embedding visualization."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p>EMBEDDINGS · WORD2VEC · REPRESENTATION EVALUATION</p>
+			<h1>Word2Vec Lab</h1>
+			<p>
+				Do word analogies such as “king − man + woman = queen”
+				hold in a corpus, and how sensitive are they to embedding
+				dimension, context window, and negative sampling?
+			</p>
+
+			<section aria-labelledby="measures">
+				<h2 id="measures">Inspect embedding geometry</h2>
+				<ul>
+					<li>NumPy skip-gram with negative sampling and a 27-configuration parameter sweep.</li>
+					<li>Analogy accuracy with explicit OOV coverage and category-level results.</li>
+					<li>Hand-labeled nearest-neighbor precision@k and per-run training time.</li>
+					<li>Optional GloVe and FastText baselines and category-colored t-SNE.</li>
+				</ul>
+				<p>
+					The included corpus and labels are illustrative fixtures,
+					not private papers, a standard benchmark, or evidence that
+					a particular analogy holds. Use an authorized corpus and
+					review your own evaluation pairs.
+				</p>
+			</section>
+
+			<section aria-labelledby="run">
+				<h2 id="run">Run the experiment</h2>
+				<pre><code>cd word2vec-lab
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+pytest
+word2vec-lab
+# Optional FastText and t-SNE:
+pip install -e ".[fasttext,viz]"
+word2vec-lab --baselines --visualize</code></pre>
+				<p>
+					<a href="https://github.com/buragapuravi/ravikumarburagapu.com/tree/main/word2vec-lab"
+						>Read the project README</a
+					>
+					·
+					<a href="/projects/learned-ann">Explore Learned ANN Index</a>
+				</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
