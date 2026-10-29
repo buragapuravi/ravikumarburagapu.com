@@ -8,6 +8,9 @@ import { defineConfig, fontProviders } from 'astro/config';
 export default defineConfig({
 	site: 'https://ravikumarburagapu.com',
 	integrations: [mdx(), sitemap()],
+	redirects: {
+		'/blog': '/writing',
+	},
 	fonts: [
 		{
 			provider: fontProviders.local(),

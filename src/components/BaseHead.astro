@@ -3,7 +3,6 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
-import FallbackImage from '../assets/blog-placeholder-1.jpg';
 import { SITE_TITLE } from '../consts';
 import { Font } from 'astro:assets';
 
@@ -15,7 +14,24 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = FallbackImage } = Astro.props;
+const { title, description, image } = Astro.props;
+
+// Use a page-specific image if one is passed in, otherwise the site preview card.
+const ogImage = image
+	? new URL(image.src, Astro.url)
+	: new URL('/og-image.png', Astro.site);
+
+const person = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: 'Ravikumar Buragapu',
+	jobTitle: 'Director of Engineering',
+	url: 'https://ravikumarburagapu.com',
+	sameAs: [
+		'https://www.linkedin.com/in/ravikumar-buragapu',
+		'https://github.com/buragapuravi',
+	],
+};
 ---
 
 <!-- Global Metadata -->
@@ -41,12 +57,21 @@ const { title, description, image = FallbackImage } = Astro.props;
 <title>{title}</title>
 <meta name="description" content={description} />
 
-<!-- Open Graph / Facebook -->
+<!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content={SITE_TITLE} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image.src, Astro.url)} />
+<meta property="og:image" content={ogImage} />
+{!image && <meta property="og:image:width" content="1200" />}
+{!image && <meta property="og:image:height" content="630" />}
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- Structured data: tells search engines who this site belongs to -->
+<script type="application/ld+json" set:html={JSON.stringify(person)} />
