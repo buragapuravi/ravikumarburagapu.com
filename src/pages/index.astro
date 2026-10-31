@@ -8,10 +8,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 <!doctype html>
 <html lang="en">
 	<head>
-<BaseHead
-	title="Ravikumar Buragapu | Director of Engineering, AI Engineering and Reliability"
-	description={SITE_DESCRIPTION}
-/>
+		<BaseHead
+			title="Ravikumar Buragapu | Director of Engineering, AI Engineering and Reliability"
+			description={SITE_DESCRIPTION}
+		/>
 	</head>
 	<body>
 		<Header />
@@ -22,11 +22,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				<h1 id="hero-title">Engineering AI for the real world.</h1>
 
 				<p>
-					I’m Ravikumar Buragapu, a Director of Engineering focused on
-					AI engineering, platform engineering, and reliability at
-					enterprise scale. I work on turning emerging technologies—from
-					GenAI to agentic systems—into platforms that are secure,
-					observable, resilient, and ready for production.
+					I’m Ravikumar Buragapu, a Director of Engineering at Oracle
+					Health, focused on AI engineering, platform engineering, and
+					reliability at enterprise scale. I work on turning emerging
+					technologies—from GenAI to agentic systems—into platforms that
+					are secure, observable, resilient, and ready for production.
 				</p>
 
 				<p>
@@ -51,10 +51,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 					<li><strong>Oracle Health</strong> commercial, regulated, and Federal platforms</li>
 					<li><strong>10,000+ developers</strong> reached by agentic engineering at Wells Fargo</li>
 					<li><strong>Adobe</strong> platform engineering and AI-driven service maturity</li>
-					<li><strong>Since 2000</strong> in software engineering</li>
-					<!-- Optional, once your employer approves the figures:
+					<li><strong>25+ years</strong> in software engineering</li>
+					{/* Optional, once your employer approves the figures:
 					<li><strong>10 PB, 500M+ records</strong> on Oracle Health data platforms</li>
-					-->
+					*/}
 				</ul>
 			</section>
 
@@ -65,21 +65,26 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				<p>
 					Designing the engineering foundations for production AI:
 					agent identity, least-privilege access, evaluation,
-					guardrails, observability, and controlled autonomy.
+					guardrails, observability, and controlled autonomy. I believe
+					autonomy should be earned through measurable evidence and
+					backed by explicit operational controls.
 				</p>
 
 				<h3>Platform engineering and developer productivity</h3>
 				<p>
 					Building platforms, reusable engineering capabilities,
 					and automation that help teams deliver software faster
-					while maintaining security, consistency, and quality.
+					while maintaining security, consistency, and quality. The
+					goal is less friction for engineers without giving up
+					consistency or control.
 				</p>
 
 				<h3>Reliability and operational intelligence</h3>
 				<p>
 					Engineering resilient, data-intensive systems through
 					observability, SRE practices, incident automation,
-					capacity engineering, and measurable service objectives.
+					capacity engineering, and measurable service objectives,
+					so architectural decisions connect to measurable outcomes.
 				</p>
 			</section>
 
@@ -133,25 +138,42 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			<section aria-labelledby="experience-title">
 				<h2 id="experience-title">Engineering leadership at scale</h2>
 
-				<p>
-					At Oracle Health, I lead engineering across infrastructure,
-					reliability, and data intelligence platforms serving
-					commercial, regulated, and Federal environments.
-				</p>
+				<ul class="orgs">
+					<li>
+						<strong>Oracle Health</strong>
+						<span class="sub">AI-native infrastructure and enterprise reliability</span>
+						<p>
+							I lead engineering across infrastructure, reliability,
+							and data intelligence platforms serving commercial,
+							regulated, and Federal environments.
+						</p>
+					</li>
+					<li>
+						<strong>Wells Fargo</strong>
+						<span class="sub">Agentic AI and engineering transformation</span>
+						<p>
+							I formed the Agentic and GenAI Squad and helped shape
+							agentic engineering strategy across an organization
+							reaching more than 10,000 developers.
+						</p>
+					</li>
+					<li>
+						<strong>Adobe</strong>
+						<span class="sub">Platform engineering and developer experience</span>
+						<p>
+							I led platform engineering and the Agentic AI Builders
+							Group, and built an AI-driven Service Maturity Insights
+							platform.
+						</p>
+					</li>
+				</ul>
 
 				<p>
-					Previously, at Wells Fargo, I formed the Agentic and GenAI
-					Squad and helped shape agentic engineering strategy across
-					an organization reaching more than 10,000 developers.
-					At Adobe, I led platform engineering, the Agentic AI
-					Builders Group, and development of an AI-driven
-					Service Maturity Insights platform.
-				</p>
-
-				<p>
-					My experience also includes engineering roles at Kohl’s
-					and Charles Schwab, building on a software engineering
-					career that began in India in 2000.
+					Earlier roles include Kohl’s and Charles Schwab, building
+					on a software engineering career that began in India in
+					2000. Over 25 years that has spanned enterprise
+					applications, data platforms, cloud infrastructure,
+					developer productivity, and AI.
 				</p>
 
 				<p><a href="/about">More about my background and experience</a></p>
@@ -195,6 +217,17 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				<p><a href="/writing">Explore all articles</a></p>
 			</section>
 
+			<section aria-labelledby="speaking-title">
+				<h2 id="speaking-title">Speaking</h2>
+				<p>
+					I speak about production AI, platform engineering,
+					developer productivity, and reliability. Recent talks include
+					DPE Summit 2023, ScyllaDB Summit 2023, and Percona
+					Community Live 2022.
+				</p>
+				<p><a href="/speak">Talks, topics, and how to invite me</a></p>
+			</section>
+
 			<section aria-labelledby="connect-title">
 				<h2 id="connect-title">Let’s exchange ideas</h2>
 
@@ -205,11 +238,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				</p>
 
 				<p>
-					<a href="/speak">Speaking and collaboration</a>
-					·
 					<a href="/about">About me</a>
 					·
 					<a href="https://www.linkedin.com/in/ravikumar-buragapu" target="_blank" rel="noopener">LinkedIn</a>
+					{/* When your domain email is ready, add:
+					·
+					<a href="mailto:contact@ravikumarburagapu.com">Email</a> */}
 				</p>
 			</section>
 		</main>
@@ -257,12 +291,33 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		margin-bottom: 0;
 		font-size: 0.95em;
 	}
+	.orgs {
+		list-style: none;
+		padding: 0;
+		margin: 1rem 0;
+	}
+	.orgs li {
+		padding: 0.25rem 0 0.25rem 1rem;
+		margin-bottom: 0.9rem;
+		border-left: 3px solid rgb(var(--gray-light));
+	}
+	.orgs strong {
+		display: block;
+	}
+	.orgs .sub {
+		display: block;
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+	}
+	.orgs p {
+		margin: 0.35rem 0 0 0;
+	}
 	.visually-hidden {
 		position: absolute;
 		width: 1px;
 		height: 1px;
 		overflow: hidden;
 		clip: rect(0 0 0 0);
-		white-space: nowrap
+		white-space: nowrap;
 	}
 </style>

@@ -20,6 +20,11 @@ import Header from '../../components/Header.astro';
 				Tools and experiments exploring how to engineer AI systems
 				that are measurable, useful, and responsible in practice.
 			</p>
+			<p>
+				My approach is straightforward: build the system, measure its
+				behavior, understand its limitations, and use the evidence to
+				improve engineering decisions.
+			</p>
 
 			<section aria-labelledby="fit">
 				<h2 id="fit">How these fit together</h2>
@@ -50,6 +55,12 @@ import Header from '../../components/Header.astro';
 						RAG latency, throughput, cost, retrieval recall, and
 						answer support.
 					</p>
+					<p class="question">
+						Question: how do model configurations, retrieval
+						strategies, and infrastructure choices affect the
+						performance and quality of AI applications, and how can
+						benchmark results support architecture decisions?
+					</p>
 				</article>
 
 				<article class="project featured">
@@ -60,6 +71,10 @@ import Header from '../../components/Header.astro';
 						for answer correctness and citation support, with Cohen's
 						kappa, question-type disagreements, and labeling costs.
 					</p>
+					<p class="question">
+						Question: when can automated evaluation provide enough
+						evidence to support decisions about AI system quality?
+					</p>
 				</article>
 
 				<article class="project">
@@ -69,6 +84,10 @@ import Header from '../../components/Header.astro';
 						A controlled comparison of fixed, recursive,
 						sentence-window, and semantic chunking on retrieval,
 						context tokens, answer accuracy, and latency.
+					</p>
+					<p class="question">
+						Question: how much does chunking strategy influence
+						retrieval effectiveness, and under what conditions?
 					</p>
 				</article>
 			</section>
@@ -88,6 +107,11 @@ import Header from '../../components/Header.astro';
 						briefings, email triage, meeting prep, and scheduling
 						suggestions through read-only MCP servers.
 					</p>
+					<p class="question">
+						Question: how can agentic applications provide useful
+						automation without giving up security, transparency, and
+						user control?
+					</p>
 				</article>
 
 				<article class="project">
@@ -97,6 +121,11 @@ import Header from '../../components/Header.astro';
 						A citation-first, LangGraph RAG application that decomposes
 						multi-hop questions with MCTS, compares search strategies,
 						retrieves local source passages, and evaluates citations.
+					</p>
+					<p class="question">
+						Question: how can retrieval and reasoning strategies
+						improve the quality of answers to complex research
+						questions?
 					</p>
 				</article>
 			</section>
@@ -116,6 +145,7 @@ import Header from '../../components/Header.astro';
 						search, compared with IVF-PQ, HNSW, and ScaNN on recall,
 						throughput, build time, and index memory.
 					</p>
+					<p class="question">Focus: retrieval accuracy, search latency, memory usage, and indexing behavior.</p>
 				</article>
 
 				<article class="project">
@@ -126,6 +156,7 @@ import Header from '../../components/Header.astro';
 						evaluated against downstream code-identifier accuracy
 						under fixed token and byte budgets.
 					</p>
+					<p class="question">Focus: vocabulary design, sequence length, tokenization efficiency, and downstream performance.</p>
 				</article>
 
 				<article class="project">
@@ -135,6 +166,7 @@ import Header from '../../components/Header.astro';
 						A parameter-matched comparison of RNN, LSTM, GRU, and a
 						tiny Transformer on character prediction and 100-step recall.
 					</p>
+					<p class="question">Focus: architecture trade-offs, computational efficiency, training behavior, and model quality.</p>
 				</article>
 
 				<article class="project">
@@ -145,7 +177,24 @@ import Header from '../../components/Header.astro';
 						hyperparameter sweep, analogy and neighbor evaluation,
 						and optional GloVe, FastText, and t-SNE comparisons.
 					</p>
+					<p class="question">Focus: representation quality, training objectives, embedding geometry, and evaluation.</p>
 				</article>
+			</section>
+
+			<section aria-labelledby="philosophy">
+				<h2 id="philosophy">Research philosophy</h2>
+				<p>
+					I approach AI engineering through experimentation and
+					evidence. A successful experiment is not necessarily one
+					that produces the best metric. It is one that improves
+					understanding, exposes trade-offs, and supports better
+					engineering decisions.
+				</p>
+				<p>
+					I'm especially interested in how model capabilities,
+					evaluation methods, infrastructure behavior, and operational
+					reliability relate to one another.
+				</p>
 			</section>
 
 			<section aria-labelledby="next">
@@ -177,6 +226,11 @@ import Header from '../../components/Header.astro';
 	.tag {
 		font-size: 0.75em;
 		letter-spacing: 0.06em;
+		color: rgb(var(--gray));
+	}
+	.question {
+		font-size: 0.9em;
+		font-style: italic;
 		color: rgb(var(--gray));
 	}
 	.featured {

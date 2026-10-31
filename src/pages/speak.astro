@@ -26,12 +26,91 @@ import Header from '../components/Header.astro';
 					My focus is on the decisions that turn promising ideas into
 					production systems: architecture, evaluation, security,
 					operational resilience, and measurable engineering outcomes.
+					I try to help audiences see not only what is possible, but
+					what it takes to make it work reliably at scale.
 				</p>
-				<p><a href="#invite">Invite me to speak</a></p>
+				<p>
+					<a href="#talks">Past talks</a> · <a href="#invite">Invite me to speak</a>
+				</p>
 			</header>
 
-			<section aria-labelledby="featured-talks">
-				<h2 id="featured-talks">Selected talks and conference appearances</h2>
+			<section aria-labelledby="offered">
+				<h2 id="offered">Talks I offer</h2>
+
+				<article class="topic">
+					<h3>The Hard Part of Agents Isn't the Model</h3>
+					<p>
+						Why production agent systems depend on identity,
+						permissions, evaluation, observability, cost controls,
+						and operational accountability—not just model quality.
+					</p>
+					<p class="label">Key takeaways</p>
+					<ul>
+						<li>Why model capability is only one part of agent reliability</li>
+						<li>How to design permission boundaries for agents</li>
+						<li>The role of evaluation in deciding how much autonomy an agent gets</li>
+						<li>Operational patterns for trustworthy AI systems</li>
+					</ul>
+					<p class="audience">Audience: AI engineers, platform architects, engineering leaders, enterprise technology teams.</p>
+				</article>
+
+				<article class="topic">
+					<h3>Earning Agentic Autonomy</h3>
+					<p>
+						How evaluation evidence, error budgets, policy
+						enforcement, and runtime controls can determine
+						which actions an AI agent is allowed to take.
+					</p>
+					<p class="label">Key takeaways</p>
+					<ul>
+						<li>Treating autonomy as an engineering decision, not a model capability</li>
+						<li>Evaluating agent behavior under realistic conditions, including replay and attribution</li>
+						<li>Setting risk-based autonomy tiers that move with measured reliability</li>
+						<li>Connecting evaluation results to execution-time controls</li>
+					</ul>
+					<p class="audience">Audience: AI architects, researchers, engineering leaders, AI governance practitioners.</p>
+				</article>
+
+				<article class="topic">
+					<h3>Engineering AI-Native Organizations</h3>
+					<p>
+						How internal developer platforms, AI-assisted
+						workflows, and guardrails change software delivery,
+						and what that means for engineering organizations.
+					</p>
+					<p class="label">Key takeaways</p>
+					<ul>
+						<li>How AI changes software development workflows</li>
+						<li>The evolution of internal developer platforms</li>
+						<li>Measuring developer productivity in AI-assisted environments</li>
+						<li>Building organizations that can adopt AI responsibly</li>
+					</ul>
+					<p class="audience">Audience: CTOs, VPs and directors of engineering, platform engineering leaders.</p>
+				</article>
+
+				<h3>More topics</h3>
+				<ul>
+					<li>
+						<strong>Engineering Reliable AI Systems.</strong>{' '}
+						Monitoring, failure recovery, human oversight, and measurable
+						service objectives for AI in production.
+					</li>
+					<li>
+						<strong>Developer Productivity: From Metrics to Outcomes.</strong>{' '}
+						Moving beyond activity-based metrics to developer experience
+						and software delivery performance.
+					</li>
+					<li>
+						<strong>Operational Resilience for Data-Intensive Systems.</strong>{' '}
+						High availability, observability, capacity, and recovery across
+						complex enterprise platforms.
+					</li>
+				</ul>
+				<p class="note">Depth and focus can be adapted for technical, leadership, or mixed audiences.</p>
+			</section>
+
+			<section aria-labelledby="talks">
+				<h2 id="talks">Past talks and conference appearances</h2>
 				<ul class="talks">
 					<li>
 						<strong>DPE Summit 2023</strong>
@@ -54,10 +133,7 @@ import Header from '../components/Header.astro';
 						<strong>ScyllaDB Summit 2023</strong>
 						<p class="meta">Talk · Online · February 2023</p>
 						{/* When you have the session title, replace the line below with it. */}
-						<p>
-							Conference presentation on database and
-							distributed-systems engineering.
-						</p>
+						<p>Conference presentation on database and distributed-systems engineering.</p>
 						<a
 							href="https://www.youtube.com/watch?v=4k1R8uST-9M"
 							target="_blank"
@@ -111,25 +187,21 @@ import Header from '../components/Header.astro';
 						</a>
 					</li>
 					<li>
-						<strong>Inspired AI / World Summit AI</strong>
-						<p class="meta">Speaker</p>
-						{/* Add the year once confirmed, for example: Speaker · 2020 */}
-						<p>
-							AI industry speaker profile and related event information.
-						</p>
+						<strong>Inspired AI speaker directory</strong>
+						<p class="meta">Speaker listing</p>
+						{/* Replace this with the event name and year once you confirm you spoke. */}
+						<p>Listed as an AI industry speaker.</p>
 						<a
 							href="https://inspired-minds.co.uk/inspired-ai-speakers/"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							View speaker listing
+							View listing
 						</a>
 					</li>
 				</ul>
-			</section>
 
-			<section aria-labelledby="interviews">
-				<h2 id="interviews">Interviews</h2>
+				<h3>Interviews</h3>
 				<ul>
 					<li>
 						<a
@@ -143,114 +215,69 @@ import Header from '../components/Header.astro';
 				</ul>
 			</section>
 
-			<section aria-labelledby="speaking-topics">
-				<h2 id="speaking-topics">Speaking topics</h2>
+			<section aria-labelledby="academic">
+				<h2 id="academic">Guest lectures and academic engagement</h2>
 				<p>
-					I welcome opportunities to speak at engineering conferences,
-					leadership forums, podcasts, and academic events on topics
-					such as:
+					I welcome invitations from universities for guest lectures,
+					technical seminars, workshops, and mentoring. Topics I can cover:
 				</p>
 				<ul>
-					<li>
-						<strong>The Hard Part of Agents Isn't the Model</strong>
-						<p>
-							Why production agent systems depend on identity,
-							permissions, evaluation, observability, cost controls,
-							and operational accountability—not just model quality.
-						</p>
-					</li>
-					<li>
-						<strong>Earning Agentic Autonomy</strong>
-						<p>
-							How evaluation evidence, error budgets, policy
-							enforcement, and runtime controls can determine
-							which actions an AI agent is allowed to take.
-						</p>
-					</li>
-					<li>
-						<strong>Engineering Reliable AI Systems</strong>
-						<p>
-							Building the operational foundations for AI in
-							production, including monitoring, failure recovery,
-							human oversight, and measurable service objectives.
-						</p>
-					</li>
-					<li>
-						<strong>AI-Native Platform Engineering</strong>
-						<p>
-							How internal developer platforms, AI-assisted
-							workflows, reusable engineering capabilities,
-							and guardrails can improve developer productivity
-							without sacrificing security or quality.
-						</p>
-					</li>
-					<li>
-						<strong>Developer Productivity: From Metrics to Outcomes</strong>
-						<p>
-							Moving beyond activity-based metrics to understand
-							developer experience, software delivery performance,
-							and the organizational conditions for high-velocity
-							engineering.
-						</p>
-					</li>
-					<li>
-						<strong>Operational Resilience for Data-Intensive Systems</strong>
-						<p>
-							Engineering for high availability, observability,
-							capacity, incident response, and recovery across
-							complex enterprise platforms.
-						</p>
-					</li>
+					<li>Agentic AI: architecture, evaluation, and responsible autonomy</li>
+					<li>Building production-ready AI systems</li>
+					<li>Site reliability engineering and operational excellence</li>
+					<li>AI-native software engineering and developer productivity</li>
 				</ul>
+				<p>
+					My aim is to connect academic foundations with the practical
+					problems of building and operating real systems.
+				</p>
 			</section>
 
 			<section aria-labelledby="formats">
 				<h2 id="formats">Formats</h2>
 				<ul>
-					<li>Conference talks and keynotes</li>
-					<li>Technical deep-dive sessions</li>
-					<li>Panels and fireside chats</li>
-					<li>Workshops</li>
-					<li>Guest lectures for universities</li>
+					<li>Conference keynotes and technical sessions</li>
+					<li>Engineering leadership panels and fireside chats</li>
+					<li>Technical workshops</li>
+					<li>Podcasts and interviews</li>
+					<li>University and research discussions</li>
+					<li>Industry roundtables</li>
 				</ul>
 			</section>
 
 			<section aria-labelledby="bio">
 				<h2 id="bio">Speaker bio</h2>
 				<p>
-					Ravikumar Buragapu is a Director of Engineering who leads AI
-					engineering and infrastructure for Oracle Health, focusing on
-					making agentic and generative AI systems secure, observable,
-					and reliable in regulated environments. Previously he formed
-					the Agentic and GenAI Squad at Wells Fargo and led platform
-					engineering and the Agentic AI Builders Group at Adobe. He has
-					spoken at DPE Summit, Percona Community Live, and ScyllaDB
-					Summit.
+					Ravikumar Buragapu is a Director of Engineering with more
+					than 25 years in software engineering. At Oracle Health he
+					leads engineering across infrastructure, reliability, and
+					data intelligence platforms, with a focus on making agentic
+					and generative AI systems secure, observable, and reliable
+					in regulated environments. Previously he formed the Agentic
+					and GenAI Squad at Wells Fargo and led platform engineering
+					and the Agentic AI Builders Group at Adobe. He has spoken at
+					DPE Summit, Percona Community Live, and ScyllaDB Summit.
 				</p>
-				<p>
-					<a href="/about">Full background</a>
-				</p>
+				<p><a href="/about">Full background</a></p>
 			</section>
 
 			<section aria-labelledby="invite">
 				<h2 id="invite">Invite me to speak</h2>
 				<p>
-					I'm open to conversations with conference organizers,
+					I welcome invitations from conference organizers,
 					engineering communities, podcast hosts, and academic
 					programs interested in production AI, platform engineering,
 					reliability, and the future of software engineering.
 				</p>
 				<p>
-					The best way to reach me is a message on
+					The best way to reach me is a message on{' '}
 					<a
 						href="https://www.linkedin.com/in/ravikumar-buragapu"
 						target="_blank"
 						rel="noopener noreferrer"
-					>LinkedIn</a>
-					with the event, date, audience, and format. You can also
+					>LinkedIn</a>{' '}
+					with the event, date, audience, and format. You can also{' '}
 					<a href="/about">learn more about my background</a>.
-					{/* When your domain email is ready, add:
-					   or email <a href="mailto:your-address@ravikumarburagapu.com">your-address@ravikumarburagapu.com</a> */}
 				</p>
 			</section>
 
@@ -258,7 +285,7 @@ import Header from '../components/Header.astro';
 				<h2 id="related-writing">Related writing</h2>
 				<p>
 					Explore my articles on agentic systems, engineering
-					productivity, and production AI.
+					productivity, and production AI.{' '}
 					<a href="/writing">Read the articles</a>.
 				</p>
 			</section>
@@ -284,6 +311,25 @@ import Header from '../components/Header.astro';
 	}
 	.meta {
 		font-size: 0.85em;
+		color: rgb(var(--gray));
+	}
+	.topic {
+		padding: 1rem 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.topic h3 {
+		margin: 0 0 0.25em 0;
+	}
+	.label {
+		font-size: 0.8em;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: rgb(var(--gray));
+		margin: 0.75rem 0 0.25rem 0;
+	}
+	.audience,
+	.note {
+		font-size: 0.9em;
 		color: rgb(var(--gray));
 	}
 </style>
