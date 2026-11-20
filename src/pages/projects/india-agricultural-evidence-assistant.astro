@@ -1,0 +1,68 @@
+---
+import Project from '../../layouts/Project.astro';
+
+const repo =
+	'https://github.com/buragapuravi/ravikumarburagapu.com/tree/main/india-agricultural-evidence-assistant';
+---
+
+<Project
+	title="India Agricultural Evidence Assistant"
+	description="A local, evidence-first agricultural research prototype with cited retrieval, structured data, and explicit abstention."
+	tag="EVIDENCE-FIRST RAG · AGRICULTURE · RESEARCH PROTOTYPE"
+	intro="Explore agricultural research documents with answers linked to source passages and pages. The prototype combines dense and lexical retrieval, optional reranking, and a deterministic evidence gate designed to abstain when support is insufficient."
+	status="Local research demo · not an advisory service"
+	stack="Python · Streamlit · LlamaIndex · Chroma · BM25"
+	repo={repo}
+>
+	<section aria-labelledby="workflow">
+		<h2 id="workflow">A traceable research workflow</h2>
+		<p>
+			Ask a question about the bundled research corpus, optionally
+			narrow it by crop or location, and inspect the retrieved passages,
+			source metadata, and retrieval trace behind the response. A
+			bounded, opt-in research planner can suggest up to two follow-up
+			searches while retaining the original question.
+		</p>
+		<p>
+			Structured indicators and district comparisons use validated
+			source rows rather than asking a language model to calculate
+			numeric results. Responses validate cited source IDs and pages
+			before they are displayed.
+		</p>
+	</section>
+
+	<section aria-labelledby="safety">
+		<h2 id="safety">Evidence boundaries matter</h2>
+		<p>
+			This is an evidence-discovery teaching prototype, not an
+			official advisory service or a substitute for current government
+			guidance, pesticide labels, institutional review, or local
+			agronomists. The bundled documents are clearly labeled synthetic
+			teaching fixtures and must never be used to make farming
+			decisions. The app does not independently verify source
+			authenticity or agronomic correctness.
+		</p>
+	</section>
+
+	<section aria-labelledby="run">
+		<h2 id="run">Run it locally</h2>
+		<p>
+			The project runs locally and can return cited extractive evidence
+			without a paid API key. Model-backed synthesis and the bounded
+			research planner are optional and require a configured local or
+			OpenAI-compatible provider.
+		</p>
+		<pre><code>cd india-agricultural-evidence-assistant
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install -e '.[dev]'
+cp .env.example .env
+python -m app.prepare_models
+python -m app.ingest --input data/demo --input data/raw --rebuild
+streamlit run streamlit_app.py --server.address 127.0.0.1 --server.port 8502</code></pre>
+		<p>
+			See the repository README for setup details, framework and storage
+	options, evaluation methodology, and limitations.
+		</p>
+	</section>
+</Project>

@@ -1,0 +1,13 @@
+{
+  "source_id": "demo-injection-fixture",
+  "title": "Synthetic prompt-injection fixture",
+  "organization": "Prototype teaching corpus",
+  "issued_date": "2026-01-15",
+  "state": "Tamil Nadu",
+  "district": "Coimbatore",
+  "crop": "cotton",
+  "season": "kharif",
+  "language": "English",
+  "document_type": "adversarial test fixture",
+  "status": "synthetic teaching document"
+}

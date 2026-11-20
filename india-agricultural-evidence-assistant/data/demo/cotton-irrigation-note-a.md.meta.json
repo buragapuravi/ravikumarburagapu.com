@@ -1,0 +1,13 @@
+{
+  "source_id": "demo-cotton-interval-a",
+  "title": "Synthetic cotton irrigation note A",
+  "organization": "Prototype teaching corpus",
+  "issued_date": "2022-01-01",
+  "state": "Maharashtra",
+  "district": "Nagpur",
+  "crop": "cotton",
+  "season": "kharif",
+  "language": "English",
+  "document_type": "synthetic scenario",
+  "status": "synthetic teaching document"
+}

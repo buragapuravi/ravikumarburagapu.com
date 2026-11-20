@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What are the three principles of conservation agriculture according to FAO?",
+    "relevant_source_ids": ["fao-conservation-agriculture-principles"]
+  },
+  {
+    "question": "How does FAO describe the role and trade-offs of cover crops in conservation agriculture?",
+    "relevant_source_ids": ["fao-soil-organic-cover"]
+  },
+  {
+    "question": "What potential effects of crop rotation on pests, weeds, nutrients, and soil biology does FAO describe?",
+    "relevant_source_ids": ["fao-crop-rotation-diversification"]
+  },
+  {
+    "question": "What does FAO list as symptoms of soil degradation?",
+    "relevant_source_ids": ["fao-soil-management"]
+  },
+  {
+    "question": "What does FAO say about monitoring and integrated pest management for plant health?",
+    "relevant_source_ids": ["fao-plant-health-ipm"]
+  },
+  {
+    "question": "What topics were covered at the ICAR-CIARI lowland rice training in North and Middle Andaman in May 2026?",
+    "relevant_source_ids": ["icar-ciari-andaman-rice-training-2026"]
+  },
+  {
+    "question": "How many farmers attended the Bloomsdale rice field day, and how many were women?",
+    "relevant_source_ids": ["icar-ciari-bloomsdale-rice-field-day-2026"]
+  },
+  {
+    "question": "What pulse crops did the 2017 ICAR field day discuss for rice and maize fallows in Meghalaya?",
+    "relevant_source_ids": ["icar-neh-pulses-rice-fallow-field-day-2017"]
+  },
+  {
+    "question": "Which soil is good for rice crop, and how do soil texture and groundwater affect water needs?",
+    "relevant_source_ids": ["irri-rice-soil-water-management"]
+  },
+  {
+    "question": "Compare heavy clay and coarse sandy soils for rice water requirements.",
+    "relevant_source_ids": ["irri-rice-soil-water-management"]
+  }
+]

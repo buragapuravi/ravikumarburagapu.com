@@ -1,0 +1,13 @@
+{
+  "source_id": "demo-rice-water",
+  "title": "Synthetic rice field observation note",
+  "organization": "Prototype teaching corpus",
+  "issued_date": "2026-01-15",
+  "state": "Tamil Nadu",
+  "district": "Coimbatore",
+  "crop": "rice",
+  "season": "kharif",
+  "language": "English",
+  "document_type": "field observation",
+  "status": "synthetic teaching document"
+}

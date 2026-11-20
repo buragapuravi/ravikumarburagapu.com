@@ -1,0 +1,167 @@
+{
+  "registry_version": 1,
+  "updated_at": "2026-11-13",
+  "description": "Official-source discovery and ingestion registry. Candidate URLs are not indexed content unless marked ingested. Access and reuse conditions must be checked before collection or redistribution.",
+  "sources": [
+    {
+      "source_id": "icar-kharif-advisories-2025",
+      "organization": "Indian Council of Agricultural Research",
+      "title": "Kharif Agro-Advisories for Farmers 2025",
+      "url": "https://www.icar.org.in/sites/default/files/Circulars/ICAR%20En-Kharif%20Agro-Advisories%20for%20Farmers%202025.pdf",
+      "modality": "document",
+      "recommended_use": "Historical, season-specific text retrieval; preserve PDF pages and label 2025 Kharif, not current advice.",
+      "status": "candidate-not-ingested",
+      "access_note": "Fetch was not successful in this environment; source content was not added."
+    },
+    {
+      "source_id": "imd-agromet",
+      "organization": "India Meteorological Department",
+      "title": "Agricultural Meteorology Division",
+      "url": "https://imdagrimet.gov.in/",
+      "modality": "dated-bulletins-and-observations",
+      "recommended_use": "Capture crop/district bulletin issue time, validity interval, issuing unit, and observation or forecast type.",
+      "status": "candidate-not-ingested",
+      "access_note": "Not retrieved in this session."
+    },
+    {
+      "source_id": "imd-crop-advisory",
+      "organization": "India Meteorological Department",
+      "title": "Crop-specific advisories",
+      "url": "https://imdagrimet.gov.in/cropAdvisory_3.php",
+      "modality": "dated-bulletins",
+      "recommended_use": "Treat each bulletin as time-bounded; query issue date and validity before displaying as current.",
+      "status": "candidate-not-ingested",
+      "access_note": "Not retrieved in this session."
+    },
+    {
+      "source_id": "imd-climate-data-announcement",
+      "organization": "India Meteorological Department",
+      "title": "Climate Data Services announcement",
+      "url": "https://internal.imd.gov.in/press_release/20210323_pr_1049.pdf",
+      "modality": "document",
+      "recommended_use": "Use for data-service context and access terms; not as a substitute for weather forecasts.",
+      "status": "candidate-not-ingested",
+      "access_note": "Not retrieved in this session."
+    },
+    {
+      "source_id": "imd-climate-services",
+      "organization": "India Meteorological Department",
+      "title": "Climate anomaly time series",
+      "url": "https://mausam.imd.gov.in/imd_latest/contents/cs_anomaly_timeseries_temp_rainfall.php",
+      "modality": "structured-time-series",
+      "recommended_use": "Keep period, anomaly baseline, units, station/grid, and data revision attached; historical normals are not forecasts.",
+      "status": "candidate-not-ingested",
+      "access_note": "Not retrieved in this session."
+    },
+    {
+      "source_id": "icar-crida-contingency-plans",
+      "organization": "ICAR-Central Research Institute for Dryland Agriculture",
+      "title": "District Agricultural Contingency Plans",
+      "url": "https://www.icar-crida.res.in/ccp.html",
+      "modality": "document",
+      "recommended_use": "Index by district, scenario, crop, issue/publication date; label older plans historical.",
+      "status": "candidate-not-ingested",
+      "access_note": "Fetch was unsuccessful in this environment; source content was not added."
+    },
+    {
+      "source_id": "icar-nbsslup",
+      "organization": "ICAR-National Bureau of Soil Survey and Land Use Planning",
+      "title": "Soil survey and digital soil mapping resources",
+      "url": "https://icar-nbsslup.org.in/",
+      "modality": "geospatial",
+      "recommended_use": "Preserve map scale/resolution, coordinate reference system, survey date, method, and limits; do not convert pixels into unsupported prose.",
+      "status": "candidate-not-ingested",
+      "access_note": "Not retrieved in this session."
+    },
+    {
+      "source_id": "soil-health-card-portal",
+      "organization": "Department of Agriculture and Farmers Welfare",
+      "title": "Soil Health Card portal",
+      "url": "https://soilhealth.dac.gov.in/",
+      "modality": "portal-and-structured-data",
+      "recommended_use": "Use public scheme documentation only; do not assume individual farm cards are open or authorized for bulk use.",
+      "status": "candidate-not-ingested",
+      "access_note": "Not retrieved in this session."
+    },
+    {
+      "source_id": "soil-health-card-faq",
+      "organization": "Department of Agriculture and Farmers Welfare",
+      "title": "Soil Health Card FAQ",
+      "url": "https://soilhealth.dac.gov.in/files/FAQ_Final_English.pdf",
+      "modality": "document",
+      "recommended_use": "Definitions and scheme context for pH, EC, organic carbon, N/P/K, and micronutrients.",
+      "status": "candidate-not-ingested",
+      "access_note": "Not retrieved in this session."
+    },
+    {
+      "source_id": "des-apy-reports",
+      "organization": "Directorate of Economics and Statistics, Department of Agriculture and Farmers Welfare",
+      "title": "Area, Production and Yield reports",
+      "url": "https://desagri.gov.in/document-report/area-production-and-yield-of-principal-crops-and-yield-rates-of-principal-crops/",
+      "modality": "structured-table",
+      "recommended_use": "Store crop/year/state/district/season, units, estimate status, and exact report query as structured records.",
+      "status": "candidate-not-ingested",
+      "access_note": "The catalog URL was supplied for discovery; the tested APY report view is recorded separately."
+    },
+    {
+      "source_id": "des-apy-portal",
+      "organization": "Directorate of Economics and Statistics, Department of Agriculture and Farmers Welfare",
+      "title": "Area, Production and Yield report portal",
+      "url": "https://data.desagri.gov.in/website/crops-apy-report-web",
+      "modality": "structured-table",
+      "recommended_use": "Store crop/year/state/district/season, units, estimate status, report filters, source row reference, and retrieval date.",
+      "status": "partially-imported",
+      "access_note": "Portal UI was queried for the all-district Punjab/Wheat/Rabi/2022-2023 report. Twenty-three district rows were manually transcribed; estimate status was not shown. Hashes identify visible normalized rows, not downloaded source files."
+    },
+    {
+      "source_id": "data-gov-district-crop-production",
+      "organization": "Open Government Data Platform India",
+      "title": "District-wise, season-wise crop production statistics",
+      "url": "https://www.data.gov.in/catalog/district-wise-season-wise-crop-production-statistics-0",
+      "modality": "structured-table",
+      "recommended_use": "Use resource-level update metadata and geographic/season/year dimensions; do not assume catalog records are current.",
+      "status": "candidate-not-ingested",
+      "access_note": "Catalog fetch returned HTTP 403 in this environment; no records were imported."
+    },
+    {
+      "source_id": "cgwb-groundwater-monitoring",
+      "organization": "Central Ground Water Board",
+      "title": "Ground Water Level Monitoring",
+      "url": "https://cgwb.gov.in/en/ground-water-level-monitoring",
+      "modality": "structured-time-series",
+      "recommended_use": "Retain reporting period, measurement season, station/geography, units, and collection method for each observation.",
+      "status": "candidate-not-ingested",
+      "access_note": "Fetch was unsuccessful in this environment; source content was not added."
+    },
+    {
+      "source_id": "cgwb-dynamic-groundwater",
+      "organization": "Central Ground Water Board",
+      "title": "Dynamic Ground Water Resources of India",
+      "url": "https://cgwb.gov.in/en/dynamic-ground-water-resources-india",
+      "modality": "structured-table-and-report",
+      "recommended_use": "Keep assessment year, assessment unit, classification, and report/table citation with every value.",
+      "status": "candidate-not-ingested",
+      "access_note": "Not retrieved in this session."
+    },
+    {
+      "source_id": "nrsc-soil-applications",
+      "organization": "National Remote Sensing Centre, ISRO",
+      "title": "Soil applications and mapping",
+      "url": "https://www.nrsc.gov.in/nrscnew/Apps_Soils_Apps.php?lang_code=en",
+      "modality": "geospatial",
+      "recommended_use": "Record map scale/resolution, date, method, units, and whether layers are modeled estimates or field observations.",
+      "status": "candidate-not-ingested",
+      "access_note": "Not retrieved in this session."
+    },
+    {
+      "source_id": "irri-rice-soil-water-management",
+      "organization": "International Rice Research Institute",
+      "title": "IRRI Rice Knowledge Bank: How to Manage Water",
+      "url": "http://www.knowledgebank.irri.org/step-by-step-production/growth/water-management",
+      "modality": "technical-text-summary",
+      "recommended_use": "General international context on soil texture, groundwater depth, and rice water input; not an India-specific soil recommendation or a yield ranking.",
+      "status": "ingested-summary",
+      "access_note": "Curator-written summary based on the linked public page. The source does not establish a universally best soil type or an optimal soil pH; check IRRI reuse terms before redistribution."
+    }
+  ]
+}
