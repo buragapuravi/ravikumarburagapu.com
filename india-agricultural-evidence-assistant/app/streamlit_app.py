@@ -61,6 +61,23 @@ st.markdown(
         letter-spacing: .12em; text-transform: uppercase;
     }
     .subtle {color: #637067; font-size: .94rem;}
+    .branch-badge {
+        display: inline-block; font-size: .7rem; font-weight: 700;
+        letter-spacing: .09em; text-transform: uppercase;
+        padding: 2px 8px; border-radius: 4px; margin-bottom: 4px;
+    }
+    .badge-text    {color: #2d7d46; border: 1px solid #2d7d46; background: #f0f9f2;}
+    .badge-struct  {color: #1565c0; border: 1px solid #1565c0; background: #e8f0fe;}
+    .badge-agent   {color: #6a1b9a; border: 1px solid #6a1b9a; background: #f3e5f5;}
+    .badge-abstain {color: #c62828; border: 1px solid #c62828; background: #fce8e8;}
+    .pipeline-flow {
+        font-size: .82rem; color: #3d6b45;
+        font-family: monospace; letter-spacing: .02em;
+        background: #f3f7f2; border: 1px solid #dfe9dc;
+        padding: 6px 12px; border-radius: 6px; margin-bottom: 8px;
+    }
+    .config-label {font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: #7a9280; margin: 0;}
+    .config-value {font-size: .88rem; font-weight: 600; color: #2b4d32; margin: 0 0 8px 0;}
     </style>
     """,
     unsafe_allow_html=True,
@@ -251,21 +268,38 @@ def _latest_evaluation_report() -> tuple[dict, str] | None:
     return payload, report_path.name
 
 
-st.markdown('<p class="eyebrow">AGRICULTURAL RESEARCH · INDIA</p>', unsafe_allow_html=True)
-hero_left, hero_right = st.columns([4, 1])
+st.markdown('<p class="eyebrow">AGENTIC RAG · HYBRID RETRIEVAL · EVIDENCE-FIRST · INDIA AGRICULTURE</p>', unsafe_allow_html=True)
+hero_left, hero_right = st.columns([3, 2])
 with hero_left:
     st.title("Field Evidence Workbench")
     st.markdown(
-        '<p class="subtle">A source-grounded research workspace for exploring agricultural '
-        'evidence—not an automated farm-advisory service.</p>',
+        '<p class="subtle">Dense + BM25 → RRF → evidence gate → cited synthesis. '
+        'Every claim traces back to a source passage; the system abstains when evidence is insufficient.</p>',
         unsafe_allow_html=True,
     )
 with hero_right:
     st.markdown("")
-    st.markdown(
-        f"**{BASE_CONFIG.framework.title()} + {BASE_CONFIG.vector_backend.title()}**  \n"
-        f"`{BASE_CONFIG.embedding_model.split('/')[-1]}`"
+    cfg1, cfg2 = st.columns(2)
+    _provider_display = (
+        "Extractive" if SAVED_UI_SETTINGS["provider"] == "none"
+        else SAVED_UI_SETTINGS["provider"].replace("-", " ").title()
     )
+    with cfg1:
+        st.markdown(
+            f'<p class="config-label">Framework</p>'
+            f'<p class="config-value">{BASE_CONFIG.framework.title()} + {BASE_CONFIG.vector_backend.title()}</p>'
+            f'<p class="config-label">Generation</p>'
+            f'<p class="config-value">{_provider_display}</p>',
+            unsafe_allow_html=True,
+        )
+    with cfg2:
+        st.markdown(
+            f'<p class="config-label">Retrieval</p>'
+            f'<p class="config-value">Dense {BASE_CONFIG.dense_top_k} · BM25 {BASE_CONFIG.lexical_top_k}</p>'
+            f'<p class="config-label">Embedding</p>'
+            f'<p class="config-value">{BASE_CONFIG.embedding_model.split("/")[-1]}</p>',
+            unsafe_allow_html=True,
+        )
 
 if not manifest.get("chunk_count"):
     st.warning("The evidence index is empty. Build the starter index before beginning a session.")
@@ -300,12 +334,11 @@ synthetic_count = sum(
     if "synthetic" in str(row.get("status", "")).casefold()
 )
 
-metric_cols = st.columns(2)
+metric_cols = st.columns(4)
 metric_cols[0].metric("Indexed documents", doc_count)
 metric_cols[1].metric("Searchable passages", chunk_count)
-metric_cols = st.columns(2)
-metric_cols[0].metric("Official-source summaries", official_count)
-metric_cols[1].metric("Synthetic test fixtures", synthetic_count)
+metric_cols[2].metric("Official-source summaries", official_count)
+metric_cols[3].metric("Synthetic test fixtures", synthetic_count)
 
 facets = _corpus_facets()
 with st.sidebar:
@@ -435,8 +468,27 @@ with st.sidebar:
             )
         st.caption("Dense + BM25 → rank fusion → optional reranker → evidence and citation checks.")
 
-st.markdown("### Choose a field-research scenario")
-st.caption("Load a ready-to-run example grounded in the indexed source collection.")
+with st.sidebar:
+    with st.expander("Pipeline configuration"):
+        _reranker_label = (
+            f"`{BASE_CONFIG.reranker_model.split('/')[-1]}`"
+            if BASE_CONFIG.reranker_model else "disabled"
+        )
+        st.markdown(
+            f"**Retrieval** · Dense top-{BASE_CONFIG.dense_top_k} + BM25 top-{BASE_CONFIG.lexical_top_k}  \n"
+            f"**Fusion** · RRF (lexical weight 2×)  \n"
+            f"**Reranker** · {_reranker_label}  \n"
+            f"**Evidence gate** · score ≥ `{BASE_CONFIG.evidence_min_score}` "
+            f"· coverage ≥ `{BASE_CONFIG.evidence_min_coverage:.0%}`  \n"
+            f"**Abstention** · conflicting evidence, missing context, expired advisory"
+        )
+        st.caption(
+            f"Framework: {BASE_CONFIG.framework} + {BASE_CONFIG.vector_backend}  \n"
+            f"Model: `{BASE_CONFIG.embedding_model.split('/')[-1]}`"
+        )
+
+st.markdown("### Demo scenarios")
+st.caption("Six curated queries exercise different pipeline branches. Load one to pre-fill the question and filters, then inspect the full retrieval trace.")
 scenario_cols = st.columns(2)
 scenarios = [
     (
@@ -489,6 +541,14 @@ scenarios = [
         "Agentic research brief",
     ),
 ]
+_SCENARIO_BRANCH: dict[str, tuple[str, str]] = {
+    "01 · Regional extension":    ("TEXT · HYBRID",        "badge-text"),
+    "02 · Participation evidence": ("STRUCTURED · ICAR",    "badge-struct"),
+    "03 · Agronomy concepts":     ("TEXT · HYBRID",        "badge-text"),
+    "04 · Conflict handling":     ("ABSTENTION · CONFLICT", "badge-abstain"),
+    "05 · Rice soil evidence":    ("TEXT · QUERY EXPAND",   "badge-text"),
+    "06 · Agentic research brief":("AGENTIC · MULTI-STEP",  "badge-agent"),
+}
 for offset in range(0, len(scenarios), 2):
     scenario_cols = st.columns(2)
     for column, (title, question, crop, region, season, subtitle, *workflow) in zip(
@@ -496,6 +556,11 @@ for offset in range(0, len(scenarios), 2):
         scenarios[offset : offset + 2],
     ):
         with column:
+            branch_label, branch_cls = _SCENARIO_BRANCH.get(title, ("TEXT", "badge-text"))
+            st.markdown(
+                f'<span class="branch-badge {branch_cls}">{branch_label}</span>',
+                unsafe_allow_html=True,
+            )
             st.markdown(f"**{title}**")
             st.caption(subtitle)
             st.button(
@@ -534,6 +599,7 @@ if workflow_labels[workflow_label] == "agentic":
         )
 
 st.markdown("### Research question")
+st.caption("Questions route automatically to hybrid text retrieval, structured indicators, or agentic multi-step planning based on the selected workflow.")
 with st.form("research_query", clear_on_submit=False):
     question = st.text_area(
         "Ask about the indexed evidence",
@@ -670,33 +736,53 @@ if structured_result is not None:
             st.info("Name a specific event (for example, Bloomsdale rice field day) to query its structured indicators.")
             st.write(sorted({row["event_name"] for row in structured_result["rows"]}))
 elif result is not None:
-    st.markdown(f"## Research brief  \n*{st.session_state.get('last_question', '')}*")
+    _last_q = st.session_state.get('last_question', '')
+    st.markdown("## Research brief")
+    st.markdown(f"*{_last_q}*")
     if route:
-        st.caption(f"Route: {route['reason']}")
+        _path = route.get("path", "text").upper()
+        _path_cls = {
+            "TEXT": "badge-text", "AGENTIC": "badge-agent",
+            "STATISTICS": "badge-struct", "EXTENSION": "badge-struct",
+        }.get(_path, "badge-text")
+        st.markdown(
+            f'<span class="branch-badge {_path_cls}">{_path}</span> '
+            f'<span class="subtle">{route["reason"]}</span>',
+            unsafe_allow_html=True,
+        )
     if result.diagnostics.get("agentic"):
+        _planner_q = result.diagnostics.get('planner_queries', 0)
+        _llm_calls = result.diagnostics.get('llm_calls', 0)
+        _steps = result.diagnostics.get('agent_steps', [])
         st.info(
-            f"Agentic RAG · {result.diagnostics.get('planner_queries', 0)} bounded retrieval "
-            f"steps · {result.diagnostics.get('llm_calls', 0)} LLM calls"
+            f"**Agentic RAG** · {_planner_q} planner quer{'y' if _planner_q == 1 else 'ies'} "
+            f"→ {len(_steps)} hybrid retrieval step{'s' if len(_steps) != 1 else ''} "
+            f"→ {_llm_calls} LLM call{'s' if _llm_calls != 1 else ''} total  \n"
+            f"Original question always searched · at most 2 follow-up queries · read-only local index"
         )
     gate = result.gate
     if result.abstained:
+        _gate_reason = gate.reason if gate else "Insufficient evidence"
+        st.error(f"**Evidence gate: Abstain** — {_gate_reason}")
+        if gate and gate.missing_context:
+            st.caption(f"Missing context: {' · '.join(gate.missing_context)}")
         st.warning(result.answer)
     else:
-        st.success(
-            "Evidence gate passed · "
-            + ("model-assisted synthesis" if result.diagnostics.get("llm_called") else "extractive evidence mode")
-        )
+        _answer_mode = "model-assisted synthesis" if result.diagnostics.get("llm_called") else "extractive evidence mode"
+        st.success(f"**Evidence gate: Pass** — {_answer_mode}")
+        if gate:
+            st.caption(f"Gate reason: {gate.reason}")
         st.markdown(result.answer)
-        st.caption(f"Answer mode: {result.provider_state}")
+        st.caption(f"Provider: {result.provider_state}")
 
     confidence_cols = st.columns(4)
-    confidence_cols[0].metric("Evidence decision", "Pass" if gate and gate.answerable else "Abstain")
-    confidence_cols[1].metric("Question-term coverage", f"{gate.coverage:.0%}" if gate else "—")
-    confidence_cols[2].metric("Best retrieval score", f"{gate.score:.3f}" if gate else "—")
+    confidence_cols[0].metric("Gate decision", "Pass" if gate and gate.answerable else "Abstain")
+    confidence_cols[1].metric("Term coverage", f"{gate.coverage:.0%}" if gate else "—")
+    confidence_cols[2].metric("Top retrieval score", f"{gate.score:.3f}" if gate else "—")
     confidence_cols[3].metric("Evidence passages", len(result.evidence))
     st.caption(
-        "Term overlap and retrieval scores are diagnostic signals, not answer confidence. "
-        "The evidence gate also checks whether the requested topic is supported."
+        "Term coverage and retrieval score are diagnostic pipeline signals, not answer confidence. "
+        "The gate also checks requested topic, source status, and advisory validity dates."
     )
 
     claims_tab, answer_tab, trace_tab = st.tabs(["Claims & citations", "Sources & evidence", "Retrieval trace"])
@@ -761,52 +847,66 @@ elif result is not None:
                 if source.extraction_warnings:
                     st.warning("; ".join(source.extraction_warnings))
     with trace_tab:
-        st.caption(
-            "The trace separates first-stage dense and lexical candidates from the fused, "
-            "context-filtered evidence shown above."
+        _reranker_stage = (
+            f"reranker top-{BASE_CONFIG.rerank_top_k}"
+            if BASE_CONFIG.reranker_model else "reranker disabled"
+        )
+        st.markdown(
+            f'<p class="pipeline-flow">'
+            f'Dense (k={BASE_CONFIG.dense_top_k}) + BM25 (k={BASE_CONFIG.lexical_top_k}) '
+            f'→ RRF (lexical 2×) → {_reranker_stage} → evidence gate → synthesis'
+            f'</p>',
+            unsafe_allow_html=True,
         )
         diagnostics = result.diagnostics
         if diagnostics.get("agentic"):
-            st.markdown("**Visible agent actions**")
+            st.markdown("**Visible agent actions** · read-only local hybrid search only")
             st.caption(
-                "This trace shows tool actions and search queries, not hidden model reasoning. "
-                "The only enabled tool is read-only hybrid search over the local indexed corpus."
+                "Tool calls, queries, and evidence counts are shown here. "
+                "The model's internal reasoning is not exposed. "
+                "The agent cannot browse the web, execute code, or modify data."
             )
             for step_number, step in enumerate(diagnostics.get("agent_steps", []), start=1):
-                with st.expander(f"Step {step_number} · {step['action']}", expanded=True):
-                    st.markdown(f"**Search query:** {step['query']}")
-                    st.caption(
-                        f"{step['evidence_count']} passages · sources: "
-                        f"{', '.join(step['source_ids']) or 'none'}"
-                    )
+                with st.expander(
+                    f"Step {step_number} · {step['action']} · {step['evidence_count']} passages retrieved",
+                    expanded=True,
+                ):
+                    st.markdown(f"**Query:** `{step['query']}`")
+                    st.caption(f"Sources: {', '.join(step['source_ids']) or 'none'}")
                     st.caption(f"Reranker: {step['reranker_state']}")
         if diagnostics.get("query_expansion"):
-            st.caption(f"Retrieval query expansion: {diagnostics['query_expansion']}")
+            st.caption(f"Query expansion applied: {diagnostics['query_expansion']}")
         trace_cols = st.columns(2)
         with trace_cols[0]:
-            st.markdown("**Dense retrieval · embedding similarity**")
+            st.markdown("**Stage 1a · Dense retrieval** (embedding similarity)")
             dense = diagnostics.get("dense", [])
             if dense:
                 st.dataframe(dense, hide_index=True, use_container_width=True)
             else:
                 st.caption("No dense candidates.")
         with trace_cols[1]:
-            st.markdown("**Lexical retrieval · BM25**")
+            st.markdown("**Stage 1b · Lexical retrieval** (BM25)")
             lexical = diagnostics.get("lexical", [])
             if lexical:
                 st.dataframe(lexical, hide_index=True, use_container_width=True)
             else:
                 st.caption("No lexical candidates.")
-        st.markdown("**Ranking and safety checks**")
-        st.json(
-            {
-                "fusion": diagnostics.get("fusion", {}),
-                "reranker": diagnostics.get("reranker_state", "not run"),
-                "evidence_gate": gate.reason if gate else "not run",
-                "missing_context": list(gate.missing_context) if gate else [],
-                "citation_validation": "Applied to generated answers" if diagnostics.get("llm_called") else "No generated citation claims",
-                "llm_called": diagnostics.get("llm_called", False),
-            }
+        st.markdown("**Stage 2 · RRF fusion + evidence gate**")
+        _gate_label = "PASS" if gate and gate.answerable else "ABSTAIN"
+        _gate_cls = "badge-text" if gate and gate.answerable else "badge-abstain"
+        _gate_reason = gate.reason if gate else "not run"
+        st.markdown(
+            f'<span class="branch-badge {_gate_cls}">{_gate_label}</span> {_gate_reason}',
+            unsafe_allow_html=True,
+        )
+        fusion_data = diagnostics.get("fusion", {})
+        if fusion_data:
+            st.json(fusion_data)
+        st.caption(
+            f"Reranker: {diagnostics.get('reranker_state', 'not run')} · "
+            f"Citation validation: "
+            f"{'applied to generated answer' if diagnostics.get('llm_called') else 'no generated claims'} · "
+            f"LLM called: {diagnostics.get('llm_called', False)}"
         )
 elif not st.session_state.get("question_text", "").strip():
     st.info("Load a scenario or enter a research question to start an evidence-backed workflow.")

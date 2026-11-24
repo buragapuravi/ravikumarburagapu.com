@@ -8,10 +8,15 @@ Requires Node.js 22.23.4 or newer.
 
 ```sh
 npm install
-npm run dev
+npm run dev -- --background
+npx astro dev status
+npx astro dev logs
+npx astro dev stop
 npm run build
 npm run preview
 ```
+
+After restarting VS Code or your system, open the repository in VS Code and check `npx astro dev status` in a terminal. If the server is not running, start it with `npm run dev -- --background`, then open [http://localhost:4321](http://localhost:4321). The background server runs independently of the terminal; use the status, logs, and stop commands above to manage it. If dependencies are not installed, run `npm install` first.
 
 Astro's file-based routes are in `src/pages/`. The independent research projects are organized in top-level directories; each project has its own README and setup instructions.
 

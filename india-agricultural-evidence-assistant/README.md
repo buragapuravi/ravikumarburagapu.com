@@ -302,4 +302,5 @@ pytest
   adapter does not require that extra.
 - **pgvector connection error:** verify Compose is running and `POSTGRES_DSN` matches.
 
-See [docs/live-demo-script.md](docs/live-demo-script.md) for a prepared 10-minute flow.
+See [docs/live-demo-script.md](docs/live-demo-script.md) for a prepared 20-minute
+technical demonstration run of show.

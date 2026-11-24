@@ -145,7 +145,11 @@ import Header from '../components/Header.astro';
 			<section aria-labelledby="talks">
 				<h2 id="talks">Past talks and conference appearances</h2>
 				<ul class="talks">
-					<li>
+					<li class="talk-card">
+						<a class="talk-thumbnail" href="https://dpe.org/sessions/ravikumar-buragapu/unlocking-high-velocity-development-strategies-tactics-and-metrics/" target="_blank" rel="noopener noreferrer" aria-label="Open DPE Summit 2023 session">
+							<img src="/images/speaking/dpe-summit-2023.webp" alt="DPE Summit 2023 session graphic featuring Ravikumar Buragapu and the talk title “Unlocking High-Velocity Development Strategies, Tactics, and Metrics.”" width="1280" height="720" loading="lazy" decoding="async" />
+						</a>
+						<div class="talk-copy">
 						<strong>DPE Summit 2023</strong>
 						<p class="meta">Talk · 2023</p>
 						<p>
@@ -161,11 +165,16 @@ import Header from '../components/Header.astro';
 						>
 							View session and materials
 						</a>
+					
+						</div>
 					</li>
-					<li>
+					<li class="talk-card">
+						<a class="talk-thumbnail" href="https://www.youtube.com/watch?v=4k1R8uST-9M" target="_blank" rel="noopener noreferrer" aria-label="Open ScyllaDB Summit 2023 session">
+							<img src="/images/speaking/scylladb-summit-2023.webp" alt="Portrait of Ravikumar Buragapu alongside the ScyllaDB Summit 2023 session topic, resilient database architecture." width="1280" height="720" loading="lazy" decoding="async" />
+						</a>
+						<div class="talk-copy">
 						<strong>ScyllaDB Summit 2023</strong>
 						<p class="meta">Talk · Online · February 2023</p>
-						{/* When you have the session title, replace the line below with it. */}
 						<p>Conference presentation on database and distributed-systems engineering.</p>
 						<a
 							href="https://www.youtube.com/watch?v=4k1R8uST-9M"
@@ -174,8 +183,14 @@ import Header from '../components/Header.astro';
 						>
 							Watch session
 						</a>
+					
+						</div>
 					</li>
-					<li>
+					<li class="talk-card">
+						<a class="talk-thumbnail" href="https://percona.community/events/percona-community-live-2022/day-1-ravikumar-buragapu/" target="_blank" rel="noopener noreferrer" aria-label="Open Percona Community Live 2022 session">
+							<img src="/images/speaking/percona-community-live-2022.webp" alt="Percona Community Live 2022 Database Resiliency event graphic featuring Ravikumar Buragapu." width="1280" height="720" loading="lazy" decoding="async" />
+						</a>
+						<div class="talk-copy">
 						<strong>Percona Community Live 2022</strong>
 						<p class="meta">Talk · Online · June 2022</p>
 						<p>
@@ -189,11 +204,16 @@ import Header from '../components/Header.astro';
 						>
 							View session
 						</a>
+					
+						</div>
 					</li>
-					<li>
+					<li class="talk-card">
+						<a class="talk-thumbnail" href="https://www.youtube.com/watch?v=D47lUHx6VVI" target="_blank" rel="noopener noreferrer" aria-label="Open Artificial Intelligence and Machine Learning Conference session">
+							<img src="/images/speaking/ai-ml-panel-2019.webp" alt="Conference panel discussion on stage at the Artificial Intelligence and Machine Learning Conference." width="1280" height="720" loading="lazy" decoding="async" />
+						</a>
+						<div class="talk-copy">
 						<strong>Artificial Intelligence and Machine Learning Conference</strong>
 						<p class="meta">Panel · Santa Clara · 2019</p>
-						{/* Add the panel's title or topic here if it had one. */}
 						<a
 							href="https://www.youtube.com/watch?v=D47lUHx6VVI"
 							target="_blank"
@@ -201,11 +221,16 @@ import Header from '../components/Header.astro';
 						>
 							Watch panel discussion
 						</a>
+					
+						</div>
 					</li>
-					<li>
+					<li class="talk-card">
+						<a class="talk-thumbnail" href="https://www.globalbigdataconference.com/seattle/global-artificial-intelligence-conference-115/speaker-details/ravi-kumar-buragapu-73271.html" target="_blank" rel="noopener noreferrer" aria-label="Open Global Artificial Intelligence Conference session">
+							<img src="/images/speaking/global-ai-conference-2019.webp" alt="Global Big Data Conference speaker profile for Ravikumar Buragapu and his AI/ML session abstract." width="1280" height="720" loading="lazy" decoding="async" />
+						</a>
+						<div class="talk-copy">
 						<strong>Global Artificial Intelligence Conference</strong>
 						<p class="meta">Talk · Seattle</p>
-						{/* Add the year here, for example: Talk · Seattle · 2019 */}
 						<p>
 							AI / ML in Data Science Engineering &amp; Operational
 							Excellence: applying AI and machine learning to
@@ -218,11 +243,13 @@ import Header from '../components/Header.astro';
 						>
 							View speaker profile
 						</a>
+					
+						</div>
 					</li>
-					<li>
+					<li class="talk-card talk-card--text">
+						<div class="talk-copy">
 						<strong>Inspired AI speaker directory</strong>
 						<p class="meta">Speaker listing</p>
-						{/* Replace this with the event name and year once you confirm you spoke. */}
 						<p>Listed as an AI industry speaker.</p>
 						<a
 							href="https://inspired-minds.co.uk/inspired-ai-speakers/"
@@ -231,12 +258,18 @@ import Header from '../components/Header.astro';
 						>
 							View listing
 						</a>
+					
+						</div>
 					</li>
 				</ul>
 
 				<h3>Interviews</h3>
-				<ul>
-					<li>
+				<ul class="interviews">
+					<li class="interview-card">
+						<a class="talk-thumbnail" href="https://www.youtube.com/watch?v=ZbuXy1aPo-8" target="_blank" rel="noopener noreferrer" aria-label="Watch the DPE Summit interview">
+							<img src="/images/speaking/conference-interview.webp" alt="Ravikumar Buragapu in conversation with a conference interviewer." width="1280" height="720" loading="lazy" decoding="async" />
+						</a>
+						<div class="talk-copy">
 						<a
 							href="https://www.youtube.com/watch?v=ZbuXy1aPo-8"
 							target="_blank"
@@ -244,6 +277,7 @@ import Header from '../components/Header.astro';
 						>
 							DPE Summit interview with Ravikumar Buragapu
 						</a>
+						</div>
 					</li>
 				</ul>
 			</section>
@@ -328,19 +362,59 @@ import Header from '../components/Header.astro';
 </html>
 
 <style>
-	.talks {
+	.talks,
+	.interviews {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 31rem), 1fr));
+		gap: 1.5rem;
 		list-style: none;
 		padding: 0;
 	}
-	.talks li {
-		padding: 1rem 0;
-		border-bottom: 1px solid rgb(var(--gray-light));
+	.talk-card,
+	.interview-card {
+		min-width: 0;
+		display: grid;
+		grid-template-columns: minmax(11rem, 0.9fr) minmax(0, 1.1fr);
+		align-items: start;
+		gap: 1rem;
+		padding: 1rem;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 0.9rem;
 	}
-	.talks li:last-child {
-		border-bottom: none;
+	.talk-card--text {
+		grid-template-columns: minmax(0, 1fr);
 	}
-	.talks p {
-		margin: 0.25rem 0;
+	.talk-thumbnail {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		border-radius: 0.65rem;
+		background: #111827;
+	}
+	.talk-thumbnail img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 180ms ease;
+	}
+	.talk-thumbnail:hover img,
+	.talk-thumbnail:focus-visible img {
+		transform: scale(1.025);
+	}
+	.talk-thumbnail:focus-visible {
+		outline: 3px solid currentColor;
+		outline-offset: 3px;
+	}
+	.talk-copy {
+		min-width: 0;
+	}
+	.talk-copy > :first-child {
+		margin-top: 0;
+	}
+	.talk-copy p {
+		margin: 0.4rem 0;
 	}
 	.meta {
 		font-size: 0.85em;
@@ -364,5 +438,16 @@ import Header from '../components/Header.astro';
 	.note {
 		font-size: 0.9em;
 		color: rgb(var(--gray));
+	}
+	@media (max-width: 700px) {
+		.talk-card,
+		.interview-card {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.talk-thumbnail img {
+			transition: none;
+		}
 	}
 </style>

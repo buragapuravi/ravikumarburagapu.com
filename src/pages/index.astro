@@ -21,6 +21,42 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 				<h1 id="hero-title">Engineering AI for the real world.</h1>
 
+				<p class="lede">
+					Director of Engineering at Oracle Health. I turn emerging AI
+					into platforms that are secure, observable, and ready for
+					production.
+				</p>
+			</section>
+
+			<section aria-labelledby="impact-title">
+				<h2 id="impact-title">Impact</h2>
+				<ul class="proof">
+					<li>
+						<strong>10,000+ developers</strong>
+						reached by the agentic engineering strategy I helped define at Wells Fargo
+					</li>
+					<li>
+						<strong>Regulated scale</strong>
+						leading infrastructure, reliability, and data intelligence engineering across commercial, regulated, and Federal platforms at Oracle Health
+					</li>
+					<li>
+						<strong>AI-driven service maturity</strong>
+						built the Service Maturity Insights platform and led the Agentic AI Builders Group at Adobe
+					</li>
+					<li>
+						<strong>25+ years</strong>
+						building enterprise platforms, from application development to AI engineering
+					</li>
+					{/* Add outcome numbers only when you can defend each one and your
+					employer allows it. Format: metric, baseline, your role. Examples:
+					<li><strong>Metric here</strong> what changed, where, and your role</li>
+					<li><strong>10 PB, 500M+ records</strong> on the Oracle Health data platforms I lead</li>
+					*/}
+				</ul>
+			</section>
+
+			<section aria-labelledby="intro-title">
+				<h2 id="intro-title" class="visually-hidden">Introduction</h2>
 				<p>
 					I’m Ravikumar Buragapu, a Director of Engineering at Oracle
 					Health, focused on AI engineering, platform engineering, and
@@ -43,19 +79,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 					·
 					<a href="/speak">Speaking</a>
 				</p>
-			</section>
-
-			<section aria-labelledby="proof-title">
-				<h2 id="proof-title" class="visually-hidden">Experience at a glance</h2>
-				<ul class="proof">
-					<li><strong>Oracle Health</strong> commercial, regulated, and Federal platforms</li>
-					<li><strong>10,000+ developers</strong> reached by agentic engineering at Wells Fargo</li>
-					<li><strong>Adobe</strong> platform engineering and AI-driven service maturity</li>
-					<li><strong>25+ years</strong> in software engineering</li>
-					{/* Optional, once your employer approves the figures:
-					<li><strong>10 PB, 500M+ records</strong> on Oracle Health data platforms</li>
-					*/}
-				</ul>
 			</section>
 
 			<section aria-labelledby="focus-title">
@@ -126,6 +149,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 							meeting prep.
 						</p>
 					</article>
+
 				</div>
 
 				<p>
@@ -259,19 +283,24 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		color: rgb(var(--gray));
 		margin-bottom: 0.5em;
 	}
+	.lede {
+		font-size: 1.15em;
+		max-width: 38em;
+	}
 	.proof {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: 0.75rem 1.5rem;
+		grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+		gap: 1rem 1.5rem;
 		list-style: none;
 		padding: 1rem 0;
-		margin: 1.5rem 0;
+		margin: 1rem 0 1.5rem 0;
 		border-top: 1px solid rgb(var(--gray-light));
 		border-bottom: 1px solid rgb(var(--gray-light));
 		font-size: 0.95em;
 	}
 	.proof strong {
 		display: block;
+		font-size: 1.1em;
 	}
 	.cards {
 		display: grid;
